@@ -31,7 +31,7 @@ var connection = mysql.createPool({
 */
 
 //Check if logged in
-router.use((req, res, next) => {
+/*router.use((req, res, next) => {
     if (req.session.username == null && req.url != "/login" && req.url != "/signup") {
         
         res.redirect('/login');
@@ -43,7 +43,7 @@ router.use((req, res, next) => {
       }
       
     
-});
+});*/
 
 //Login
 router.get('/login', (req, res, next) => {
@@ -125,7 +125,7 @@ router.post('/signup', (req, res, next) => {
         req.session.username = username;
         res.redirect('/');
         res.end();
-        
+
         /*
         //Check if username doesn't already exist
         connection.query('SELECT * FROM accounts WHERE username = ?', [username], function(error, results, fields) {
