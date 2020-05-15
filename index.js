@@ -4,7 +4,7 @@ const path = require('path'); //Imports the path module
 const bodyParser = require('body-parser') //Import for parsing forms
 
 //Mysql stuff
-const mysql = require('mysql');
+//const mysql = require('mysql');
 const session = require('express-session');
 
 
@@ -42,5 +42,6 @@ app.use('/', routes);
 app.set('views', path.join(__dirname, 'views'));  //Tells the code that are views directory is to be used for rendering templates
 app.set('view engine', 'hjs') //Sets up the view engine
 
-app.listen(5000);
-console.log('Server running on http://localhost:5000');
+let port = process.env.PORT || 5000;
+app.listen(port);
+console.log('Server running on port ' + port);

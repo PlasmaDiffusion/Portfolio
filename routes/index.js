@@ -3,8 +3,8 @@ const express = require('express');
 const router = express.Router();
 
 //Login packages
-const mysql = require('mysql');
-const bcrypt = require('bcrypt');
+//const mysql = require('mysql');
+//const bcrypt = require('bcrypt');
 
 let user = null;
 
@@ -21,14 +21,14 @@ const myPlaintextPassword = 's0/\/\P4$$w0rD';
 const someOtherPlaintextPassword = 'not_bacon';
 //const hash = bcrypt.hashSync(myPlaintextPassword, saltRounds);
 
-//Connection to database
+/*/Connection to database
 var connection = mysql.createPool({
     host     : 'localhost',
 	user     : 'root',
 	password : 'vworp1997',
 	database : 'nodelogin'
 });
-
+*/
 
 //Check if logged in
 router.use((req, res, next) => {
@@ -62,8 +62,10 @@ router.post('/login', (req, res, next) => {
  
     if (username && password) {
 
-
-
+        req.session.username = username;
+        res.redirect('/');
+        res.end();
+        /*
         //Check if the user exists in the database
         connection.query('SELECT * FROM accounts WHERE username = ?', [username], function(error, results, fields) {
         if (results.length > 0) {
@@ -88,7 +90,7 @@ router.post('/login', (req, res, next) => {
                         return
                 } 
             });
-
+            
 
         } else {
             const data = connection.query('SELECT * FROM accounts WHERE ROWNUM=1');
@@ -97,7 +99,7 @@ router.post('/login', (req, res, next) => {
         	
         //res.end();
         })
-
+        */
         
 
     } else {
@@ -119,7 +121,12 @@ router.post('/signup', (req, res, next) => {
 
     if (username && password)
     {
+
+        req.session.username = username;
+        res.redirect('/');
+        res.end();
         
+        /*
         //Check if username doesn't already exist
         connection.query('SELECT * FROM accounts WHERE username = ?', [username], function(error, results, fields) {
             console.log("Checked if exists: ")
@@ -162,7 +169,7 @@ router.post('/signup', (req, res, next) => {
         });
 
 
-        
+        */
         
 
           
