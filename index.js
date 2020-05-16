@@ -5,7 +5,7 @@ const bodyParser = require('body-parser') //Import for parsing forms
 
 //Mysql stuff
 //const mysql = require('mysql');
-const session = require('express-session');
+const session = require('cookie-session');
 
 
 const app = express();
