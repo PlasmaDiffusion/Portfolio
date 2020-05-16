@@ -31,7 +31,7 @@ var connection = mysql.createPool({
 */
 
 //Check if logged in
-/*router.use((req, res, next) => {
+router.use((req, res, next) => {
     if (req.session.username == null && req.url != "/login" && req.url != "/signup") {
         
         res.redirect('/login');
@@ -43,7 +43,7 @@ var connection = mysql.createPool({
       }
       
     
-});*/
+});
 
 //Login
 router.get('/login', (req, res, next) => {
