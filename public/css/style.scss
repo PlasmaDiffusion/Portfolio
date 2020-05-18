@@ -1,0 +1,95 @@
+$col1 : rgb(26, 34, 37);
+$col2 : #3A535C;
+$col3 : rgb(0, 0, 0);
+
+body
+{
+    background-color: $col3;
+    color: white;
+    position: relative;
+}
+
+%title
+{
+    color: $col2;
+    text-align: center;
+}
+
+h1, h2
+{
+    @extend %title;
+}
+
+ol, tr
+{
+    background-color: $col1;
+    border-radius: 4px;
+}
+
+table
+{
+    max-width: 100%;
+    border-radius: 4px;
+    width:100%;
+    display:block;
+    color: $col2;
+    padding: 10px;
+}
+
+#websites, #Opening
+{
+
+
+    max-width: 100%;
+    width:100%;
+    border-radius: 4px;
+    display:block;
+    background-color: $col1;
+    margin:0;
+    padding:0;
+}
+
+image
+{
+    outline: 10px solid black;
+}
+
+/* Container needed to position the button. Adjust the width as needed */
+.container {
+    position: relative;
+    width: 50%;
+  }
+  
+  /* Make the image responsive */
+  .container img {
+    width: 100%;
+    height: auto;
+  }
+
+/* Style the button and place it in the middle of the container/image */
+.container .btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80%;
+    height: 80%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: #555;
+    color: white;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 0px;
+    opacity: 0%;
+    transition: opacity 0.5s;
+  }
+  
+  .container .btn:hover {
+    background-color: black;
+    visibility: visible;
+    opacity: 100%;
+    transition: opacity 0.5s;
+  }
+  

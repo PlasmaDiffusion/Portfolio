@@ -4,15 +4,23 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
-    
+    <script  src="js/menu.js"></script>
 </head>
 
 <body>
  <div class = "container">
-    <h1>This is the {{name}} Template</h1>
+    <h1>Scott Cooper</h1>
+    <h2>
+        <a href="#websites">Game Programmer</a><a>/Web Developer</a>
+    </h2>
     <p>Today is {{date}}. Hello. My name is {{firstName}}.
         <img style="width:200px" src="/images/angryBert.png">
     </p>
+
+    <div id="Opening">
+
+        <p>I'm a programmer skilled in both game and web development.</p>
+    </div>
 
     {{#user}}
     <p>
@@ -31,6 +39,22 @@
         </li>
     {{/profiles}}
     </ol>
+
+    <div id ="websites">
+        <h2>Websites</h2>
+    <table>
+        
+        <tr>
+            <td>
+                <div class="container">
+                    <img src="/images/angryBert.png" alt="Snow">
+                    <button class="btn">Button</button>
+                </div>
+            </td>
+        </tr>
+
+    </table>
+    </div>
 
 
     <form method="post" action="/join">
