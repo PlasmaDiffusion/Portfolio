@@ -19,7 +19,7 @@ table {
   color: #3A535C;
   padding: 10px; }
 
-#websites, #Opening {
+#websites, #Opening, #itemInfo {
   max-width: 100%;
   width: 100%;
   border-radius: 4px;
@@ -40,6 +40,10 @@ image {
 .container img {
   width: 100%;
   height: auto; }
+
+.close {
+  color: #d40707;
+  margin: 10px; }
 
 /* Style the button and place it in the middle of the container/image */
 .container .btn {

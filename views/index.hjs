@@ -47,8 +47,8 @@
         <tr>
             <td>
                 <div class="container">
-                    <img src="/images/angryBert.png" alt="Snow">
-                    <button class="btn">Button</button>
+                    <img src="/images/angryBert.png">
+                    <button class="btn">PaintOn</button>
                 </div>
             </td>
         </tr>
@@ -56,6 +56,37 @@
     </table>
     </div>
 
+    <div id ="itemInfo" style="visibility: collapse;">
+        <h2>ITEM</h2> <button class="close">X</button>
+
+        <!--Show row of images, videos and a description at the end. !-->
+        <table>
+            <tr>
+
+                <td>
+                    <div class="container">
+                        <img src="/images/angryBert.png" id="image0">
+                    </div>
+                </td>
+
+                <td>
+                    Gee Bert, why so glum?
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="container">
+                        <button class="changePreview" value=0>.</button>
+                        <button class="changePreview" value=1>.</button>
+                        <button class="changePreview" value=2>.</button>
+                    </div>
+                </td>
+                <td>
+                
+                </td>
+            </tr>
+        </table>
+    </div>
 
     <form method="post" action="/join">
         <input type="text" name="name" placeholder="Name" /><br />
