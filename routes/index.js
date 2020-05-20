@@ -3,7 +3,7 @@ const express = require('express');
 const router = express.Router();
 
 //Login packages
-//const mysql = require('mysql');
+const mysql = require('mysql');
 //const bcrypt = require('bcrypt');
 
 let user = null;
@@ -21,14 +21,14 @@ const myPlaintextPassword = 's0/\/\P4$$w0rD';
 const someOtherPlaintextPassword = 'not_bacon';
 //const hash = bcrypt.hashSync(myPlaintextPassword, saltRounds);
 
-/*/Connection to database
+//Connection to database
 var connection = mysql.createPool({
-    host     : 'localhost',
-	user     : 'root',
-	password : 'vworp1997',
-	database : 'nodelogin'
+    host     : 'remotemysql.com',
+	user     : 'ygBNrggUP3',
+	password : 'INCidfHNiT',
+	database : 'ygBNrggUP3'
 });
-*/
+
 
 //Check if logged in
 router.use((req, res, next) => {
@@ -121,6 +121,17 @@ router.post('/signup', (req, res, next) => {
 
     if (username && password)
     {
+                //Check if username doesn't already exist
+                connection.query('SELECT * FROM websites', function(error, results, fields) {
+                    console.log("Checked if exists: ")
+                    console.log(results.length);
+        
+                    if (results.length > 0)
+                    {
+                        console.log(results[0]);
+                        
+                    }
+                })
 
         req.session.username = username;
         res.redirect('/');
