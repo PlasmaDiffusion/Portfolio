@@ -25,8 +25,8 @@ const someOtherPlaintextPassword = 'not_bacon';
 var connection = mysql.createPool({
     host     : 'remotemysql.com',
 	user     : 'ygBNrggUP3',
-	password : 'INCidfHNiT',
-	database : 'ygBNrggUP3'
+	password : process.env.DB_PASSWORD,
+    database : 'ygBNrggUP3'
 });
 
 
