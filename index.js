@@ -4,7 +4,6 @@ const path = require('path'); //Imports the path module
 const bodyParser = require('body-parser') //Import for parsing forms
 
 //Mysql stuff
-//const mysql = require('mysql');
 const session = require('express-session');
 
 
@@ -20,14 +19,6 @@ app.use(session({
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({ extended: true })); //False doesn't work
 app.use(bodyParser.json());
-
-
-//Date and time middleware
-app.use((req, res, next) => {
-    req.timestamp = new Date().toString();
-    next();
-   })
-
 
 
 //Error middleware

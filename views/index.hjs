@@ -13,15 +13,13 @@
     <h2>
         <a href="#websites">Game Programmer</a><a>/Web Developer</a>
     </h2>
-    <p>Today is {{date}}. Hello. My name is {{firstName}}.
-        <img style="width:200px" src="/images/angryBert.png">
-    </p>
 
     <div id="Opening">
 
         <p>I'm a programmer skilled in both game and web development.</p>
     </div>
 
+    <!--
     {{#user}}
     <p>
         Logged in as {{user.username}}.
@@ -38,45 +36,53 @@
             {{/profession}}
         </li>
     {{/profiles}}
-    </ol>
+    </ol> 
+    </!-->
 
     <div id ="websites">
         <h2>Websites</h2>
     <table>
-        
+    
         <tr>
+            
+        {{#websiteData}}
             <td>
                 <div class="container">
-                    <img src="/images/angryBert.png">
-                    <button class="btn">PaintOn</button>
+                    <img src={{image0_string}}>
+                    <button class="btn" value={{id}}>{{name}}</button>
                 </div>
             </td>
+            
+        {{/websiteData}}
         </tr>
 
     </table>
     </div>
 
-    <div id ="itemInfo" style="visibility: collapse;">
-        <h2>ITEM</h2> <button class="close">X</button>
+    {{#websiteData}}
+    <div id ={{id}} style="visibility: collapse;">
+        <h2>{{name}}</h2> <button class="close" value={{id}}>X</button>
 
         <!--Show row of images, videos and a description at the end. !-->
+        
         <table>
             <tr>
 
                 <td>
                     <div class="container">
-                        <img src="/images/angryBert.png" id="image0">
+                        <img src={{image0_string}} class="previewImage">
                     </div>
                 </td>
 
                 <td>
-                    Gee Bert, why so glum?
+                    {{description}}
                 </td>
             </tr>
             <tr>
+                <!-- Buttons that swap images/the video -->
                 <td>
                     <div class="container">
-                        <button class="changePreview" value=0>.</button>
+                        <button class="changePreview" value=0 id={{id}}_preview>.</button>
                         <button class="changePreview" value=1>.</button>
                         <button class="changePreview" value=2>.</button>
                     </div>
@@ -86,7 +92,17 @@
                 </td>
             </tr>
         </table>
+
+        <div class = "itemStrings" style="visibility: collapse;">
+            <p>{{video_string}}</p>
+            <p>{{image0_string}}</p>
+            <p>{{image1_string}}</p>
+            <p>{{image2_string}}</p>
+            <p>{{image3_string}}</p>
+        </div>
+
     </div>
+    {{/websiteData}}
 
     <form method="post" action="/join">
         <input type="text" name="name" placeholder="Name" /><br />
