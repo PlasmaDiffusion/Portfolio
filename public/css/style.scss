@@ -1,6 +1,7 @@
 $col1 : rgb(26, 34, 37);
-$col2 : #3A535C;
+$col2 : rgb(94, 134, 148);
 $col3 : rgb(0, 0, 0);
+$col4 : rgb(136, 137, 141);
 
 body
 {
@@ -8,6 +9,7 @@ body
     color: white;
     position: relative;
 }
+
 
 %title
 {
@@ -24,6 +26,7 @@ ol, tr
 {
     background-color: $col1;
     border-radius: 4px;
+    color:$col4;
 }
 
 table
@@ -34,6 +37,11 @@ table
     display:block;
     color: $col2;
     padding: 10px;
+}
+
+.description
+{
+    padding-left: 20%;
 }
 
 #websites, #Opening, #itemInfo
@@ -49,9 +57,24 @@ table
     padding:0;
 }
 
+/*.item
+{
+    
+}*/
+
+.changePreview
+{
+display: inline;
+}
+
 image
 {
     outline: 10px solid black;
+}
+
+.framework
+{
+    text-align: right;
 }
 
 /* Container needed to position the button. Adjust the width as needed */

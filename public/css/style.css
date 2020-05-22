@@ -4,20 +4,24 @@ body {
   position: relative; }
 
 h1, h2 {
-  color: #3A535C;
+  color: #5e8694;
   text-align: center; }
 
 ol, tr {
   background-color: #1a2225;
-  border-radius: 4px; }
+  border-radius: 4px;
+  color: #88898d; }
 
 table {
   max-width: 100%;
   border-radius: 4px;
   width: 100%;
   display: block;
-  color: #3A535C;
+  color: #5e8694;
   padding: 10px; }
+
+.description {
+  padding-left: 20%; }
 
 #websites, #Opening, #itemInfo {
   max-width: 100%;
@@ -28,8 +32,18 @@ table {
   margin: 0;
   padding: 0; }
 
+/*.item
+{
+    
+}*/
+.changePreview {
+  display: inline; }
+
 image {
   outline: 10px solid black; }
+
+.framework {
+  text-align: right; }
 
 /* Container needed to position the button. Adjust the width as needed */
 .container {

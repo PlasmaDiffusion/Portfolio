@@ -19,40 +19,48 @@
         <p>I'm a programmer skilled in both game and web development.</p>
     </div>
 
-    <!--
-    {{#user}}
-    <p>
-        Logged in as {{user.username}}.
-    </p>
-    {{/user}}
-
-
-    <ol>
-    {{#profiles}}
-        <li>
-            {{name}}, {{city}},
-            {{#profession}}
-            &nbsp; Profession: {{profession}}
-            {{/profession}}
-        </li>
-    {{/profiles}}
-    </ol> 
-    </!-->
+    <!-- Website Menu -->
 
     <div id ="websites">
-        <h2>Websites</h2>
+        <h2>Website Projects</h2>
     <table>
     
         <tr>
             
         {{#websiteData}}
+            {{#isGame}}
+            {{/isGame}}
+            {{^isGame}}
             <td>
                 <div class="container">
                     <img src={{image0_string}}>
                     <button class="btn" value={{id}}>{{name}}</button>
                 </div>
             </td>
+            {{/isGame}}
+        {{/websiteData}}
+        </tr>
+
+    </table>
+    </div>
+
+        <!-- Game Menu -->
+
+    <div id ="games">
+        <h2>Game Projects</h2>
+    <table>
+    
+        <tr>
             
+        {{#websiteData}}
+            {{#isGame}}
+            <td>
+                <div class="container">
+                    <img src={{image0_string}}>
+                    <button class="btn" value={{id}}>{{name}}</button>
+                </div>
+            </td>
+            {{/isGame}}
         {{/websiteData}}
         </tr>
 
@@ -60,7 +68,7 @@
     </div>
 
     {{#websiteData}}
-    <div id ={{id}} style="visibility: collapse;">
+    <div id ={{id}} class="item" style="display: none;">
         <h2>{{name}}</h2> <button class="close" value={{id}}>X</button>
 
         <!--Show row of images, videos and a description at the end. !-->
@@ -68,14 +76,30 @@
         <table>
             <tr>
 
+                {{#video_string}}
                 <td>
                     <div class="container">
-                        <img src={{image0_string}} class="previewImage">
+                        <iframe width="256" height="256" src={{video_string}} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </td>
+                {{/video_string}}
+
+                <td>
+                    <div class="container">
+                        <img src={{image0_string}} style="width:256px;height:256px;" class="previewImage">
                     </div>
                 </td>
 
-                <td>
-                    {{description}}
+                <td class="description">
+                    {{description0}}
+                    <br>
+                    <br>
+                    {{description1}}
+                    {{#repoLink}}
+                    <br>
+                    <br>
+                    <a href={{repoLink}}> Source Code </a>
+                    {{/repoLink}}
                 </td>
             </tr>
             <tr>
@@ -87,13 +111,14 @@
                         <button class="changePreview" value=2>.</button>
                     </div>
                 </td>
-                <td>
                 
+                <td>
+                    <img src={{frameworkImage_string}} style="width:64;height:64px;" class="framework">
                 </td>
             </tr>
         </table>
 
-        <div class = "itemStrings" style="visibility: collapse;">
+        <div class = "itemStrings" style="display: none;">
             <p>{{video_string}}</p>
             <p>{{image0_string}}</p>
             <p>{{image1_string}}</p>
@@ -103,14 +128,6 @@
 
     </div>
     {{/websiteData}}
-
-    <form method="post" action="/join">
-        <input type="text" name="name" placeholder="Name" /><br />
-        <input type="text" name="city" placeholder="City" /><br />
-        <input type="text" name="profession" placeholder="Profession" /><br />
-        <input type="submit" value="Add Profile" />
-    </form>
-
 
  </div>
 

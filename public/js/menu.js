@@ -11,8 +11,9 @@ document.addEventListener('DOMContentLoaded', () => {
         {
         button.onclick = () =>
             {
-            document.getElementById(button.value).style.visibility = "visible";
-            document.getElementById("websites").style.visibility = "collapse";
+            document.getElementById(button.value).style.display = "block";
+            document.getElementById("websites").style.display = "none";
+            document.getElementById("games").style.display = "none";
             
             //Put up the first preview image
             document.getElementById(button.value + "_preview").click();
@@ -24,8 +25,9 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             button.onclick = () =>
             {
-                document.getElementById(button.value).style.visibility = "collapse";
-                document.getElementById("websites").style.visibility = "visible";
+                document.getElementById(button.value).style.display = "none";
+                document.getElementById("websites").style.display = "block";
+                document.getElementById("games").style.display = "block";
             };  
         }
     //Cycle through images/videos
@@ -58,16 +60,54 @@ function changePreviewImage(button)
         }        
      }
 
-    if (imageNodes)
-     {
-        let imageSrcs = [imageNodes.childNodes[3].innerHTML,imageNodes.childNodes[5].innerHTML,imageNodes.childNodes[7].innerHTML]
+    if (!imageNodes) return;
+
+        let imageSrcs = [imageNodes.childNodes[1].innerHTML, imageNodes.childNodes[3].innerHTML,imageNodes.childNodes[5].innerHTML,imageNodes.childNodes[7].innerHTML];
         
-        //Give all preview images this image. You'll only see one at a time.
-        document.querySelectorAll("img").forEach(image => {
+    //Check for video
+    let videoSrc = imageNodes.childNodes[1].innerHTML;
+        
+    let offset = 1;
+    if (videoSrc) offset = 0;
+    else console.log("No video source");
+
+    //Check if showing a video
+    if (button.value+offset > 0)
+    {
+            //Give all preview images this image. You'll only see one at a time.
+            document.querySelectorAll("img").forEach(image => {
+
+                if (image.className == "previewImage")
+                    if (imageSrcs[button.value+offset]) //Make there's an actual image to show
+                        {
+
+                            image.src = imageSrcs[button.value];
+                            
+                        }
+
+                    image.style.display = "block";
+                })
             
+            //Hide videos
+            document.querySelectorAll("iframe").forEach(video => {
+                video.style.display = "none";
+            })
+
+    }
+    else
+    {
+            //Hide images
+            document.querySelectorAll("img").forEach(image => {
+
             if (image.className == "previewImage")
-                if (imageSrcs[button.value]) //Make there's an actual image to show
-                    image.src = imageSrcs[button.value];
-        })
-     }
+                image.style.display = "none";
+            })
+
+            //Show videos
+            document.querySelectorAll("iframe").forEach(video => {
+                video.style.display = "block";
+            })
+                        
+    }
+
 }
