@@ -11,7 +11,7 @@
  <div class = "container">
     <h1>Scott Cooper</h1>
     <h2>
-        <a href="#websites">Game Programmer</a><a>/Web Developer</a>
+        <a href="#games">Game Programmer</a>/<a href="#websites">Web Developer</a>
     </h2>
 
     <div id="Opening">
@@ -44,7 +44,9 @@
     </table>
     </div>
 
-        <!-- Game Menu -->
+    <br>
+
+    <!-- Game Menu -->
 
     <div id ="games">
         <h2>Game Projects</h2>
@@ -76,15 +78,15 @@
         <table>
             <tr>
 
-                {{#video_string}}
                 <td>
+                {{#video_string}}
+
                     <div class="container">
                         <iframe width="256" height="256" src={{video_string}} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
-                </td>
+
                 {{/video_string}}
 
-                <td>
                     <div class="container">
                         <img src={{image0_string}} style="width:256px;height:256px;" class="previewImage">
                     </div>
@@ -106,9 +108,9 @@
                 <!-- Buttons that swap images/the video -->
                 <td>
                     <div class="container">
-                        <button class="changePreview" value=0 id={{id}}_preview>.</button>
-                        <button class="changePreview" value=1>.</button>
-                        <button class="changePreview" value=2>.</button>
+                        <button class="changePreview" value=0 id={{id}}_preview> </button>
+                        <button class="changePreview" value=1> </button>
+                        <button class="changePreview" value=2> </button>
                     </div>
                 </td>
                 

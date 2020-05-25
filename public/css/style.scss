@@ -44,7 +44,7 @@ table
     padding-left: 20%;
 }
 
-#websites, #Opening, #itemInfo
+#websites, #games, #Opening, #itemInfo
 {
 
 
@@ -57,14 +57,42 @@ table
     padding:0;
 }
 
-/*.item
-{
-    
-}*/
-
+//Buttons for changing images/videos
 .changePreview
 {
-display: inline;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    transition-duration: 0.3s;
+    background-color: black;
+    color: black;
+    fill-opacity: 0%;
+    border: 2px solid black;
+}
+.changePreview:hover
+{
+    background-color: white;
+    color: black;
+    opacity: 50%;
+    fill-opacity: 50%;
+    border: 2px solid black;
+}
+
+.changePreviewSelected
+{
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    transition-duration: 0.3s;
+    background-color: white;
+    color: black;
+    fill-opacity: 0%;
+    border: 2px solid black;
+}
+
+.changePreviewEmpty
+{
+    display: none;
 }
 
 image

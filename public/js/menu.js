@@ -48,66 +48,81 @@ document.addEventListener('DOMContentLoaded', () => {
 //When a preview button is clicked, find the html elements that have said preview data.
 function changePreviewImage(button)
 {
-    let parent = button.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode;
+
+    //Now find the hidden <p>s that contain image or video data
+    let parentDiv = button.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode;
     var imageNodes = null;
     
     //Find the div containing the strings we need
-    for (var i = 0; i < parent.childNodes.length; i++)
+    for (var i = 0; i < parentDiv.childNodes.length; i++)
      {
-        if (parent.childNodes[i].className == "itemStrings") {
-            imageNodes = parent.childNodes[i];
+        if (parentDiv.childNodes[i].className == "itemStrings") {
+            imageNodes = parentDiv.childNodes[i];
           break;
         }        
      }
 
+    //Failsafe if nothing is found
     if (!imageNodes) return;
 
-        let imageSrcs = [imageNodes.childNodes[1].innerHTML, imageNodes.childNodes[3].innerHTML,imageNodes.childNodes[5].innerHTML,imageNodes.childNodes[7].innerHTML];
-        
+    let imageSrcs = [imageNodes.childNodes[1].innerHTML, imageNodes.childNodes[3].innerHTML,imageNodes.childNodes[5].innerHTML,imageNodes.childNodes[7].innerHTML];
+
     //Check for video
     let videoSrc = imageNodes.childNodes[1].innerHTML;
         
     let offset = 1;
     if (videoSrc) offset = 0;
-    else console.log("No video source");
+
+    let buttonIndex = parseInt(button.value) + offset;
+
+    //Fill in this button, but not the other ones.
+    let parent = button.parentNode;
+
+    for (let i = 1; i <= 5; i+=2)
+    {
+        parent.childNodes[i].className = "changePreview";
+        console.log(parent.childNodes[i].innerHTML)
+    
+        //Hide buttons that don't have anything.
+        if (imageNodes.childNodes[i+(2*offset)].innerHTML == "") parent.childNodes[i].className = "changePreviewEmpty";
+    }
+    
+    button.className = "changePreviewSelected";
+    
+    
+
 
     //Check if showing a video
-    if (button.value+offset > 0)
-    {
-            //Give all preview images this image. You'll only see one at a time.
-            document.querySelectorAll("img").forEach(image => {
+    CheckIfVideoOrImage(buttonIndex, imageSrcs);
 
-                if (image.className == "previewImage")
-                    if (imageSrcs[button.value+offset]) //Make there's an actual image to show
-                        {
+}
 
-                            image.src = imageSrcs[button.value];
-                            
-                        }
-
-                    image.style.display = "block";
-                })
-            
-            //Hide videos
-            document.querySelectorAll("iframe").forEach(video => {
-                video.style.display = "none";
-            })
-
+function CheckIfVideoOrImage(buttonIndex, imageSrcs) {
+    if (buttonIndex > 0) {
+        //Give all preview images this image. You'll only see one at a time.
+        document.querySelectorAll("img").forEach(image => {
+            if (image.className == "previewImage") {
+                if (imageSrcs[buttonIndex]) //Make there's an actual image to show
+                {
+                    image.src = imageSrcs[buttonIndex];
+                }
+                image.style.display = "block";
+            }
+        });
+        //Hide videos
+        document.querySelectorAll("iframe").forEach(video => {
+            video.style.display = "none";
+        });
     }
-    else
-    {
-            //Hide images
-            document.querySelectorAll("img").forEach(image => {
-
+    else {
+        //Hide images
+        document.querySelectorAll("img").forEach(image => {
             if (image.className == "previewImage")
                 image.style.display = "none";
-            })
-
-            //Show videos
-            document.querySelectorAll("iframe").forEach(video => {
-                video.style.display = "block";
-            })
-                        
+        });
+        //Show videos
+        document.querySelectorAll("iframe").forEach(video => {
+            video.style.display = "block";
+        });
     }
-
 }
