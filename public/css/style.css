@@ -65,8 +65,19 @@ table {
 image {
   outline: 10px solid black; }
 
+#contactMe {
+  text-align: center;
+  font-size: 24px;
+  display: block; }
+
 .framework {
-  text-align: right; }
+  float: right; }
+
+.BigSpace {
+  width: 200px;
+  background: none;
+  height: 200px;
+  display: inline-block; }
 
 /* Container needed to position the button. Adjust the width as needed */
 .container {
@@ -82,6 +93,10 @@ image {
   color: #d40707;
   margin: 10px; }
 
+/*html
+{
+	scroll-behavior: smooth;
+}*/
 /* Style the button and place it in the middle of the container/image */
 .container .btn {
   position: absolute;

@@ -11,13 +11,24 @@
  <div class = "container">
     <h1>Scott Cooper</h1>
     <h2>
-        <a href="#games">Game Programmer</a>/<a href="#websites">Web Developer</a>
+        <a href="#games_Scroll">Game Programmer</a>/<a href="#websites_Scroll">Web Developer</a>
     </h2>
 
     <div id="Opening">
 
-        <p>I'm a programmer skilled in both game and web development.</p>
+        <p>Welcome to my portfolio. I'm a programmer skilled in both game and web development.
+            </p>
+            <p>Below are samples of projects I've worked on across different frameworks.
+            Click on one to learn about it.</p>
     </div>
+
+    <div id ="websites_Scroll">
+    </div>
+
+    <div class="BigSpace">
+    </div>
+
+
 
     <!-- Website Menu -->
 
@@ -45,6 +56,15 @@
     </div>
 
     <br>
+
+    
+
+    <div class="BigSpace">
+    </div>
+    <div class="BigSpace">
+    </div>
+
+    <div id ="games_Scroll">
 
     <!-- Game Menu -->
 
@@ -97,14 +117,13 @@
                     <br>
                     <br>
                     {{description1}}
+                    <br>
                     <!-- Optional links go below --> 
                     {{#url}}
-                    <br>
                     <br>
                     <a href={{url}}> Try it out! </a>
                     {{/url}}
                     {{#repoLink}}
-                    <br>
                     <br>
                     <a href={{repoLink}}> Source Code </a>
                     {{/repoLink}}
@@ -140,6 +159,15 @@
 
  </div>
 
+
+    <div class="BigSpace">
+    </div>
+
+<br>
+<br>
+<br>
+<a id="contactMe" href="https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1&source=mailto&su=&to=ScottHRCooper@gmail.com"
+    style="content-align: center;">Contact Me</a>
 
 </body>
 
