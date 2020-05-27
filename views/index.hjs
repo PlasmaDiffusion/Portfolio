@@ -97,11 +97,18 @@
                     <br>
                     <br>
                     {{description1}}
+                    <!-- Optional links go below --> 
+                    {{#url}}
+                    <br>
+                    <br>
+                    <a href={{url}}> Try it out! </a>
+                    {{/url}}
                     {{#repoLink}}
                     <br>
                     <br>
                     <a href={{repoLink}}> Source Code </a>
                     {{/repoLink}}
+
                 </td>
             </tr>
             <tr>
