@@ -10,6 +10,10 @@ body
     position: relative;
 }
 
+p 
+{
+    padding: 1%;
+}
 
 %title
 {
@@ -27,21 +31,26 @@ ol, tr
     background-color: $col1;
     border-radius: 4px;
     color:$col4;
+    
 }
 
 table
 {
-    max-width: 100%;
+    max-width: 200%;
     border-radius: 4px;
     width:100%;
     display:block;
     color: $col2;
     padding: 10px;
+    
+    overflow-x: auto;
 }
 
 .description
 {
     padding-left: 20%;
+    padding-top: 5%;
+    padding-right: 5%;
 }
 
 #websites, #games, #Opening, #itemInfo
@@ -49,6 +58,7 @@ table
 
 
     max-width: 100%;
+    min-width: 80%;
     width:100%;
     border-radius: 4px;
     display:block;
@@ -100,6 +110,13 @@ image
     outline: 10px solid black;
 }
 
+.menuimage
+{
+    width: 128px;
+    height: 128px;
+    display: block;
+}
+
 #contactMe
 {
     text-align: center;
@@ -145,8 +162,8 @@ width:200px;background:none;height:200px;display:inline-block;
 .container .btn{
     position: absolute;
     top: 50%;
-    left: 50%;
-    width: 80%;
+    left: 100%;
+    width: 120%;
     height: 80%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);

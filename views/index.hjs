@@ -15,7 +15,6 @@
     </h2>
 
     <div id="Opening">
-
         <p>Welcome to my portfolio. I'm a programmer skilled in both game and web development.
             </p>
             <p>Below are samples of projects I've worked on across different frameworks.
@@ -34,6 +33,7 @@
 
     <div id ="websites">
         <h2>Website Projects</h2>
+        <p style="text-align: center;">I've used Django and Node. Databases. Responsibe CSS. Hire me pls</p>
     <table>
     
         <tr>
@@ -44,7 +44,7 @@
             {{^isGame}}
             <td>
                 <div class="container">
-                    <img src={{image0_string}}>
+                    <img src={{image0_string}} style="width: 128px; height: 128px; display: block;">
                     <button class="btn" value={{id}}>{{name}}</button>
                 </div>
             </td>
@@ -70,6 +70,7 @@
 
     <div id ="games">
         <h2>Game Projects</h2>
+        <p style="text-align: center;">Unity and Unreal yo. Degree in Game Development & Entreprenuership</p>
     <table>
     
         <tr>
@@ -78,7 +79,7 @@
             {{#isGame}}
             <td>
                 <div class="container">
-                    <img src={{image0_string}}>
+                    <img src={{image0_string}} style="width: 128px; height: 128px; display: block;">
                     <button class="btn" value={{id}}>{{name}}</button>
                 </div>
             </td>
