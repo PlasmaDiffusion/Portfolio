@@ -11,7 +11,7 @@
  <div class = "container">
     <h1>Scott Cooper</h1>
     <h2>
-        <a href="#games_Scroll">Game Programmer</a>/<a href="#websites_Scroll">Web Developer</a>
+        <a href="#websites_Scroll">Web Developer</a>/<a href="#games_Scroll">Game Programmer</a>
     </h2>
 
     <div id="Opening">
@@ -103,13 +103,13 @@
                 {{#video_string}}
 
                     <div class="container">
-                        <iframe width="256" height="256" src={{video_string}} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe width="320" height="256" src={{video_string}} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
 
                 {{/video_string}}
 
                     <div class="container">
-                        <img src={{image0_string}} style="width:256px;height:256px;" class="previewImage">
+                        <img src={{image0_string}} style="width:320px;height:256px;" class="previewImage">
                     </div>
                 </td>
 
