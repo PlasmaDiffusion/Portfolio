@@ -22,12 +22,14 @@ table {
   display: block;
   color: #5e8694;
   padding: 10px;
+  padding-top: 0px;
   overflow-x: auto; }
 
 .description {
   padding-left: 20%;
   padding-top: 5%;
-  padding-right: 5%; }
+  padding-right: 5%;
+  width: 200%; }
 
 #websites, #games, #Opening, #itemInfo {
   max-width: 100%;
@@ -38,6 +40,14 @@ table {
   background-color: #1a2225;
   margin: 0;
   padding: 0; }
+
+/* Header/Logo Title */
+h2 {
+  padding: 60px;
+  text-align: center;
+  background: #002736;
+  color: white;
+  font-size: 30px; }
 
 .changePreview {
   border-radius: 50%;

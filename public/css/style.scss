@@ -2,6 +2,7 @@ $col1 : rgb(26, 34, 37);
 $col2 : rgb(94, 134, 148);
 $col3 : rgb(0, 0, 0);
 $col4 : rgb(136, 137, 141);
+$headCol: rgb(0, 39, 54);
 
 body
 {
@@ -42,6 +43,7 @@ table
     display:block;
     color: $col2;
     padding: 10px;
+    padding-top: 0px;
     
     overflow-x: auto;
 }
@@ -51,8 +53,10 @@ table
     padding-left: 20%;
     padding-top: 5%;
     padding-right: 5%;
+    width: 200%;
 }
 
+//Main panels
 #websites, #games, #Opening, #itemInfo
 {
 
@@ -65,7 +69,17 @@ table
     background-color: $col1;
     margin:0;
     padding:0;
+
 }
+
+/* Header/Logo Title */
+h2 {
+    padding: 60px;
+    text-align: center;
+    background: $headCol;
+    color: white;
+    font-size: 30px;
+  }
 
 //Buttons for changing images/videos
 .changePreview
@@ -158,6 +172,8 @@ width:200px;background:none;height:200px;display:inline-block;
 }*/
 
 
+  
+
 /* Style the button and place it in the middle of the container/image */
 .container .btn{
     position: absolute;
@@ -184,4 +200,6 @@ width:200px;background:none;height:200px;display:inline-block;
     opacity: 100%;
     transition: opacity 0.5s;
   }
+  
+
   

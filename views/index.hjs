@@ -9,12 +9,13 @@
 
 <body>
  <div class = "container">
-    <h1>Scott Cooper</h1>
-    <h2>
-        <a href="#websites_Scroll">Web Developer</a>/<a href="#games_Scroll">Game Programmer</a>
-    </h2>
 
     <div id="Opening">
+        
+        <h2>Scott Cooper
+            <br>
+            <a href="#websites_Scroll">Web Developer</a>/<a href="#games_Scroll">Game Programmer</a>
+        </h2>
         <p>Welcome to my portfolio. I'm a programmer skilled in both game and web development.
             </p>
             <p>Below are samples of projects I've worked on across different frameworks.
@@ -29,11 +30,16 @@
 
 
 
+
     <!-- Website Menu -->
 
     <div id ="websites">
+        
+
+
+
         <h2>Website Projects</h2>
-        <p style="text-align: center;">I've used Django and Node. Databases. Responsibe CSS. Hire me pls</p>
+        <p style="text-align: center;">I've used Django and NodeJS. Databases. Responsive CSS. Hire me pls</p>
     <table>
     
         <tr>
@@ -92,7 +98,9 @@
 
     {{#websiteData}}
     <div id ={{id}} class="item" style="display: none;">
-        <h2>{{name}}</h2> <button class="close" value={{id}}>X</button>
+        <h2 style="padding: 1px;">{{name}}
+            <button class="close" value={{id}}>X</button>
+        </h2> 
 
         <!--Show row of images, videos and a description at the end. !-->
         
