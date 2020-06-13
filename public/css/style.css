@@ -18,11 +18,12 @@ ol, tr {
 table {
   max-width: 200%;
   border-radius: 4px;
-  width: 100%;
+  width: 150%;
   display: block;
   color: #5e8694;
   padding: 10px;
   padding-top: 0px;
+  padding-right: 50%;
   overflow-x: auto; }
 
 .description {
@@ -79,21 +80,40 @@ h2 {
 .changePreviewEmpty {
   display: none; }
 
-image {
-  outline: 10px solid black; }
+.repoLink, .siteLink {
+  background-color: #004b69;
+  text-decoration: none;
+  margin: 20px;
+  padding: 10px; }
 
-.menuimage {
+.siteLink {
+  padding-right: 25%; }
+
+.repoLink {
+  padding-right: 13%; }
+
+.repoLink:hover, .siteLink:hover {
+  background-color: #002736;
+  text-decoration: none; }
+
+img {
   width: 128px;
   height: 128px;
-  display: block; }
+  display: block;
+  padding: 2px;
+  border: 2px solid #004b69;
+  background-color: #002736; }
+
+.framework {
+  float: right;
+  padding: none;
+  border: none;
+  background-color: transparent; }
 
 #contactMe {
   text-align: center;
   font-size: 24px;
   display: block; }
-
-.framework {
-  float: right; }
 
 .BigSpace {
   width: 200px;

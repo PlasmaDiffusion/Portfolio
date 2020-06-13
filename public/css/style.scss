@@ -3,6 +3,7 @@ $col2 : rgb(94, 134, 148);
 $col3 : rgb(0, 0, 0);
 $col4 : rgb(136, 137, 141);
 $headCol: rgb(0, 39, 54);
+$outlineCol: rgb(0, 75, 105);
 
 body
 {
@@ -39,12 +40,12 @@ table
 {
     max-width: 200%;
     border-radius: 4px;
-    width:100%;
+    width:150%;
     display:block;
     color: $col2;
     padding: 10px;
     padding-top: 0px;
-    
+    padding-right: 50%;
     overflow-x: auto;
 }
 
@@ -119,17 +120,50 @@ h2 {
     display: none;
 }
 
-image
+//Buttons to other sites -----------------------
+.repoLink, .siteLink
 {
-    outline: 10px solid black;
+    background-color: $outlineCol;
+    text-decoration: none;
+    margin:20px;
+    padding: 10px;
 }
+.siteLink
+{
+    padding-right: 25%;
+}
+.repoLink
+{
+    padding-right: 13%;
+}
+.repoLink:hover, .siteLink:hover
+{
+    background-color: $headCol;
+    text-decoration: none;
+}
+//----------------------------------------------
 
-.menuimage
+//Images ---------------------------------------
+img
 {
     width: 128px;
     height: 128px;
     display: block;
+    
+    padding:2px;
+    border:2px solid $outlineCol;
+    background-color:$headCol;
 }
+
+.framework
+{
+    float: right;
+    padding:none;
+    border:none;
+    background-color:transparent;
+}
+//--------------------------------------------
+
 
 #contactMe
 {
@@ -138,10 +172,6 @@ image
     display: block;
 }
 
-.framework
-{
-    float: right;
-}
 
 .BigSpace
 {

@@ -96,15 +96,20 @@
     </table>
     </div>
 
+    <!-- Project Information, Images and Links -->
+
     {{#websiteData}}
     <div id ={{id}} class="item" style="display: none;">
-        <h2 style="padding: 1px;">{{name}}
-            <button class="close" value={{id}}>X</button>
-        </h2> 
+
 
         <!--Show row of images, videos and a description at the end. !-->
         
         <table>
+            <th>
+            <h2 style="padding: 1px; padding-bottom: 10px; margin-bottom:none;">{{name}}
+                <button class="close" value={{id}}>X</button>
+            </h2> 
+            </th>
             <tr>
 
                 <td>
@@ -130,11 +135,12 @@
                     <!-- Optional links go below --> 
                     {{#url}}
                     <br>
-                    <a href={{url}}> Try it out! </a>
+                    <a href={{url}} class="siteLink" target="_blank"> Try it out!</a>
+                    <br>
                     {{/url}}
                     {{#repoLink}}
                     <br>
-                    <a href={{repoLink}}> Source Code </a>
+                    <a href={{repoLink}} class="repoLink" target="_blank"> Source Code </a>
                     {{/repoLink}}
 
                 </td>
@@ -146,6 +152,7 @@
                         <button class="changePreview" value=0 id={{id}}_preview> </button>
                         <button class="changePreview" value=1> </button>
                         <button class="changePreview" value=2> </button>
+                        <button class="changePreview" value=3> </button>
                     </div>
                 </td>
                 

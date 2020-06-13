@@ -81,7 +81,7 @@ function changePreviewImage(button)
     //Failsafe if nothing is found
     if (!imageNodes) return;
 
-    let imageSrcs = [imageNodes.childNodes[1].innerHTML, imageNodes.childNodes[3].innerHTML,imageNodes.childNodes[5].innerHTML,imageNodes.childNodes[7].innerHTML];
+    let imageSrcs = [imageNodes.childNodes[1].innerHTML, imageNodes.childNodes[3].innerHTML,imageNodes.childNodes[5].innerHTML,imageNodes.childNodes[7].innerHTML, imageNodes.childNodes[9].innerHTML];
 
     //Check for video
     let videoSrc = imageNodes.childNodes[1].innerHTML;
@@ -94,7 +94,7 @@ function changePreviewImage(button)
     //Fill in this button, but not the other ones.
     let parent = button.parentNode;
 
-    for (let i = 1; i <= 5; i+=2)
+    for (let i = 1; i <= 7; i+=2)
     {
         parent.childNodes[i].className = "changePreview";
         console.log(parent.childNodes[i].innerHTML)
