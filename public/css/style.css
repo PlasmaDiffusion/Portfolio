@@ -137,7 +137,7 @@ img {
 
 /*html
 {
-	scroll-behavior: smooth;
+	scroll-behavior: smooth; //Unused janky smooth scrollbar
 }*/
 /* Style the button and place it in the middle of the container/image */
 .container .btn {
