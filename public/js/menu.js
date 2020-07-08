@@ -25,6 +25,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
             //Save what the last menu was
             lastMenu = "#" + button.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.id + "_Scroll";
+
+            //Move to top of screen to see the whole thing
+            window.location.href = "#top";
             };
         }
 
