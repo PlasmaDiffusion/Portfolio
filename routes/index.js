@@ -40,6 +40,7 @@ router.get('/', (req, res, next) => {
         if(gotFromParagraphs && gotFromWebsites)
         {
         console.log(data);
+        //console.log(results);
         res.render('index', data);
         }
     })

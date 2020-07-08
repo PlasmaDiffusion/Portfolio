@@ -39,7 +39,7 @@
 
 
         <h2>Website Projects</h2>
-        <p style="text-align: center;">I've used Django and NodeJS. Databases. Responsive CSS. Hire me pls</p>
+        <p style="text-align: center;">Below are projects coded in javascript, and python. I've used Django and NodeJS (with express). Most of these projects use databases, including MongoDB.</p>
     <table>
     
         <tr>
@@ -76,7 +76,7 @@
 
     <div id ="games">
         <h2>Game Projects</h2>
-        <p style="text-align: center;">Unity and Unreal yo. Degree in Game Development & Entreprenuership</p>
+        <p style="text-align: center;">I've programmed games in Unreal, Unity, Game Maker and even without a game engine in. I got a Degree in Game Development & Entreprenuership and currently am making games for my own business.</p>
     <table>
     
         <tr>
