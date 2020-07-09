@@ -2,9 +2,9 @@
 
 <head>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
-    <script  src="js/menu.js"></script>
+    <script type="module" src="js/menuEvents.js"></script>
 </head>
 
 <body>
@@ -49,7 +49,7 @@
             {{/isGame}}
             {{^isGame}}
             <td>
-                <div class="container">
+                <div class="divider">
                     <img src={{image0_string}} style="width: 128px; height: 128px; display: block;">
                     <button class="btn" value={{id}}>{{name}}</button>
                 </div>
@@ -76,7 +76,7 @@
 
     <div id ="games">
         <h2>Game Projects</h2>
-        <p style="text-align: center;">I've programmed games in Unreal, Unity, Game Maker and even without a game engine in. I got a Degree in Game Development & Entreprenuership and currently am making games for my own business.</p>
+        <p style="text-align: center;">I've programmed games in Unreal, Unity, Game Maker and even without a game engine in OpenGL. I got a Degree in Game Development & Entreprenuership and currently am making games for my own business.</p>
     <table>
     
         <tr>
@@ -84,7 +84,7 @@
         {{#websiteData}}
             {{#isGame}}
             <td>
-                <div class="container">
+                <div class="divider">
                     <img src={{image0_string}} style="width: 128px; height: 128px; display: block;">
                     <button class="btn" value={{id}}>{{name}}</button>
                 </div>
@@ -99,68 +99,109 @@
     <!-- Project Information, Images and Links -->
 
     {{#websiteData}}
-    <div id ={{id}} class="item" style="display: none;">
+    <div id ={{id}} style="display: none;">
 
 
         <!--Show row of images, videos and a description at the end. !-->
         
-        <table>
-            <th>
+        <div class="divider" style="margin-left: 10%; margin-right: 50%;">
+            
             <h2 style="padding: 1px; padding-bottom: 10px; margin-bottom:none;">{{name}}
                 <button class="close" value={{id}}>X</button>
             </h2> 
-            </th>
-            <tr>
+        <div class="container">
 
-                <td>
-                {{#video_string}}
+            <div class="row">
 
+                <div class="col-lg"> 
                     <div class="container">
-                        <iframe width="320" height="256" src={{video_string}} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        
+                            <div class="col-md">
+                            
+                            {{#video_string}}
+
+                                <div class="divider">
+                                    <iframe width="320" height="256" src={{video_string}} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+
+                            {{/video_string}}
+
+                                <div class="divider">
+                                    <img src={{image0_string}} style="width:320px;height:256px;" class="previewImage">
+                                </div>
+
+                            </div>
+                        
+                        
+                                <br>
+                                <br>
+                            <div class="col" style="text-align: center;">
+                                <button class="prevPreview" id={{id}}_prev> &#8249; </button>
+                                <span>
+                                    <button class="changePreview" value=0 id={{id}}_preview> &nbsp; </button>
+                                    <button class="changePreview" value=1> &nbsp; </button>
+                                    <button class="changePreview" value=2> &nbsp; </button>
+                                    <button class="changePreview" value=3> &nbsp; </button>
+                                </span>
+                                <button class="nextPreview" id={{id}}_next> &#8250; </button>
+                            </div>
+                                <br>
+                                <br>
+                         
+                    
+                    </div>
+                </div>
+
+                <div class="col-xl"> <!--Description and links-->
+
+                    
+                    <div class="container">
+
+                        <!--Description -->
+                        <div class="col-lg">
+                        <br>
+                        {{description0}}
+                        <br>
+                        <br>
+                        {{description1}}
+                        <br>
+                        <br>
+                        </div>
+
+                        <!--Link to website and/or repository -->
+                        <div class="col-lg">                  
+                        {{#url}}
+                        <br>
+                        <br>
+                        <a href={{url}} class="siteLink" target="_blank"> Try it out!</a>
+                        {{/url}}
+                        {{#repoLink}}
+                        <a href={{repoLink}} class="repoLink" target="_blank"> Source Code </a>
+                        {{/repoLink}}
+                        <br>
+                        </div>
                     </div>
 
-                {{/video_string}}
 
-                    <div class="container">
-                        <img src={{image0_string}} style="width:320px;height:256px;" class="previewImage">
-                    </div>
-                </td>
-
-                <td class="description">
-                    {{description0}}
-                    <br>
-                    <br>
-                    {{description1}}
-                    <br>
-                    <!-- Optional links go below --> 
-                    {{#url}}
-                    <br>
-                    <a href={{url}} class="siteLink" target="_blank"> Try it out!</a>
-                    <br>
-                    {{/url}}
-                    {{#repoLink}}
-                    <br>
-                    <a href={{repoLink}} class="repoLink" target="_blank"> Source Code </a>
-                    {{/repoLink}}
-
-                </td>
-            </tr>
-            <tr>
-                <!-- Buttons that swap images/the video -->
-                <td>
-                    <div class="container">
-                        <button class="changePreview" value=0 id={{id}}_preview> </button>
-                        <button class="changePreview" value=1> </button>
-                        <button class="changePreview" value=2> </button>
-                        <button class="changePreview" value=3> </button>
-                    </div>
-                </td>
+                </div>
+            </div>
+            <div class="row">
                 
-                <td>
+                <!-- Optional links go below --> 
+                <div class="col-lg">
+
+                    
+                </div>
+
+                <!-- Framework icon -->
+                <div class="col-xl">
+
                     <img src={{frameworkImage_string}} style="width:64;height:64px;" class="framework">
-                </td>
-            </tr>
-        </table>
+
+                </div>
+
+            </div>
+        </div>
 
         <div class = "itemStrings" style="display: none;">
             <p>{{video_string}}</p>
@@ -169,7 +210,7 @@
             <p>{{image2_string}}</p>
             <p>{{image3_string}}</p>
         </div>
-
+    </div>
     </div>
     {{/websiteData}}
 

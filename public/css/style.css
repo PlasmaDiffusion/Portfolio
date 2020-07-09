@@ -16,31 +16,27 @@ ol, tr {
   color: #88898d; }
 
 table {
-  max-width: 200%;
   border-radius: 4px;
-  width: 150%;
   display: block;
   color: #5e8694;
   padding: 10px;
   padding-top: 0px;
-  padding-right: 50%;
   overflow-x: auto; }
 
-.description {
-  padding-left: 20%;
-  padding-top: 5%;
-  padding-right: 5%;
-  width: 200%; }
-
-#websites, #games, #Opening, #itemInfo {
-  max-width: 100%;
-  min-width: 80%;
-  width: 100%;
+#websites, #games, #Opening {
+  width: 60%;
   border-radius: 4px;
   display: block;
   background-color: #1a2225;
-  margin: 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: none;
+  margin-left: none;
   padding: 0; }
+
+.row {
+  background-color: #1a2225;
+  width: 150%; }
 
 /* Header/Logo Title */
 h2 {
@@ -67,7 +63,7 @@ h2 {
   fill-opacity: 50%;
   border: 2px solid black; }
 
-.changePreviewSelected {
+.changePreviewSelected, .nextPreview, .prevPreview {
   border-radius: 50%;
   width: 32px;
   height: 32px;
@@ -77,20 +73,22 @@ h2 {
   fill-opacity: 0%;
   border: 2px solid black; }
 
+.nextPreview, .prevPreview {
+  background-color: #004b69;
+  color: #007bff;
+  border: none; }
+
+.nextPreview:hover, .prevPreview:hover {
+  background-color: #002736; }
+
 .changePreviewEmpty {
   display: none; }
 
 .repoLink, .siteLink {
   background-color: #004b69;
   text-decoration: none;
-  margin: 20px;
-  padding: 10px; }
-
-.siteLink {
-  padding-right: 25%; }
-
-.repoLink {
-  padding-right: 13%; }
+  margin: 5px;
+  padding: 5px; }
 
 .repoLink:hover, .siteLink:hover {
   background-color: #002736;
@@ -121,30 +119,31 @@ img {
   height: 200px;
   display: inline-block; }
 
-/* Container needed to position the button. Adjust the width as needed */
-.container {
+/* divider needed to position the button. Adjust the width as needed */
+.divider {
   position: relative;
   width: 50%; }
 
 /* Make the image responsive */
-.container img {
+.divider img {
   width: 100%;
   height: auto; }
 
 .close {
   color: #d40707;
+  background-color: #004b69;
   margin: 10px; }
 
 /*html
 {
 	scroll-behavior: smooth; //Unused janky smooth scrollbar
 }*/
-/* Style the button and place it in the middle of the container/image */
-.container .btn {
+/* Style the button and place it in the middle of the divider/image */
+.divider .btn {
   position: absolute;
   top: 50%;
   left: 100%;
-  width: 120%;
+  width: 150%;
   height: 80%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
@@ -158,7 +157,7 @@ img {
   opacity: 0%;
   transition: opacity 0.5s; }
 
-.container .btn:hover {
+.divider .btn:hover {
   background-color: black;
   visibility: visible;
   opacity: 100%;

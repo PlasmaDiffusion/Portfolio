@@ -38,40 +38,51 @@ ol, tr
 
 table
 {
-    max-width: 200%;
+    //max-width: 200%;
     border-radius: 4px;
-    width:150%;
+    //width:150%;
     display:block;
     color: $col2;
     padding: 10px;
     padding-top: 0px;
-    padding-right: 50%;
+    //padding-right: 50%;
     overflow-x: auto;
 }
 
 .description
 {
-    padding-left: 20%;
-    padding-top: 5%;
-    padding-right: 5%;
-    width: 200%;
+    //padding-left: 20%;
+    //padding-top: 5%;
+    //padding-right: 5%;
+    //width: 200%;
 }
 
 //Main panels
-#websites, #games, #Opening, #itemInfo
+#websites, #games, #Opening
 {
 
 
-    max-width: 100%;
-    min-width: 80%;
-    width:100%;
+    width:60%;
     border-radius: 4px;
     display:block;
     background-color: $col1;
-    margin:0;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:none;
+    margin-left:none;
     padding:0;
 
 }
+
+.row
+{
+        
+        background-color: $col1;
+        width:150%;
+        
+}
+
+
 
 /* Header/Logo Title */
 h2 {
@@ -103,7 +114,7 @@ h2 {
     border: 2px solid black;
 }
 
-.changePreviewSelected
+.changePreviewSelected, .nextPreview, .prevPreview
 {
     border-radius: 50%;
     width: 32px;
@@ -114,6 +125,17 @@ h2 {
     fill-opacity: 0%;
     border: 2px solid black;
 }
+.nextPreview, .prevPreview
+{
+    background-color: $outlineCol;
+    color:rgb(0, 123, 255);
+    border: none;
+}
+.nextPreview:hover, .prevPreview:hover
+{
+    background-color: $headCol;
+}
+
 
 .changePreviewEmpty
 {
@@ -125,17 +147,10 @@ h2 {
 {
     background-color: $outlineCol;
     text-decoration: none;
-    margin:20px;
-    padding: 10px;
+    margin:5px;
+    padding: 5px;
 }
-.siteLink
-{
-    padding-right: 25%;
-}
-.repoLink
-{
-    padding-right: 13%;
-}
+
 .repoLink:hover, .siteLink:hover
 {
     background-color: $headCol;
@@ -178,14 +193,14 @@ img
 width:200px;background:none;height:200px;display:inline-block;
 }
 
-/* Container needed to position the button. Adjust the width as needed */
-.container {
+/* divider needed to position the button. Adjust the width as needed */
+.divider {
     position: relative;
     width: 50%;
   }
   
   /* Make the image responsive */
-  .container img {
+  .divider img {
     width: 100%;
     height: auto;
   }
@@ -193,6 +208,7 @@ width:200px;background:none;height:200px;display:inline-block;
 .close
 {
     color: rgb(212, 7, 7);
+    background-color: $outlineCol;
     margin: 10px;
 }
 
@@ -204,12 +220,12 @@ width:200px;background:none;height:200px;display:inline-block;
 
   
 
-/* Style the button and place it in the middle of the container/image */
-.container .btn{
+/* Style the button and place it in the middle of the divider/image */
+.divider .btn{
     position: absolute;
     top: 50%;
     left: 100%;
-    width: 120%;
+    width: 150%;
     height: 80%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
@@ -222,9 +238,10 @@ width:200px;background:none;height:200px;display:inline-block;
     border-radius: 0px;
     opacity: 0%;
     transition: opacity 0.5s;
+
   }
   
-  .container .btn:hover {
+  .divider .btn:hover {
     background-color: black;
     visibility: visible;
     opacity: 100%;
