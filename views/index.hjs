@@ -1,231 +1,271 @@
 <html>
 
-<head>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="/css/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
-    <script type="module" src="js/menuEvents.js"></script>
-</head>
+    <head>
+        <link
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+            crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css"
+            href="/css/bootstrap/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="/css/style.css">
+        <script type="module" src="js/menuEvents.js"></script>
+    </head>
 
-<body>
- <div class = "container">
-
-    <div id="Opening">
-        
-        <h2>Scott Cooper
-            <br>
-            <a href="#websites_Scroll">Web Developer</a>/<a href="#games_Scroll">Game Programmer</a>
-        </h2>
-        <p>Welcome to my portfolio. I'm a programmer skilled in both game and web development.
-            </p>
-            <p>Below are samples of projects I've worked on across different frameworks.
-            Click on one to learn about it.</p>
-    </div>
-
-    <div id ="websites_Scroll">
-    </div>
-
-    <div class="BigSpace">
-    </div>
-
-
-
-
-    <!-- Website Menu -->
-
-    <div id ="websites">
-        
-
-
-
-        <h2>Website Projects</h2>
-        <p style="text-align: center;">Below are projects coded in javascript, and python. I've used Django and NodeJS (with express). Most of these projects use databases, including MongoDB.</p>
-    <table>
-    
-        <tr>
-            
-        {{#websiteData}}
-            {{#isGame}}
-            {{/isGame}}
-            {{^isGame}}
-            <td>
-                <div class="divider">
-                    <img src={{image0_string}} style="width: 128px; height: 128px; display: block;">
-                    <button class="btn" value={{id}}>{{name}}</button>
-                </div>
-            </td>
-            {{/isGame}}
-        {{/websiteData}}
-        </tr>
-
-    </table>
-    </div>
-
-    <br>
-
-    
-
-    <div class="BigSpace">
-    </div>
-    <div class="BigSpace">
-    </div>
-
-    <div id ="games_Scroll">
-
-    <!-- Game Menu -->
-
-    <div id ="games">
-        <h2>Game Projects</h2>
-        <p style="text-align: center;">I've programmed games in Unreal, Unity, Game Maker and even without a game engine in OpenGL. I got a Degree in Game Development & Entreprenuership and currently am making games for my own business.</p>
-    <table>
-    
-        <tr>
-            
-        {{#websiteData}}
-            {{#isGame}}
-            <td>
-                <div class="divider">
-                    <img src={{image0_string}} style="width: 128px; height: 128px; display: block;">
-                    <button class="btn" value={{id}}>{{name}}</button>
-                </div>
-            </td>
-            {{/isGame}}
-        {{/websiteData}}
-        </tr>
-
-    </table>
-    </div>
-
-    <!-- Project Information, Images and Links -->
-
-    {{#websiteData}}
-    <div id ={{id}} style="display: none;">
-
-
-        <!--Show row of images, videos and a description at the end. !-->
-        
-        <div class="divider" style="margin-left: 10%; margin-right: 50%;">
-            
-            <h2 style="padding: 1px; padding-bottom: 10px; margin-bottom:none;">{{name}}
-                <button class="close" value={{id}}>X</button>
-            </h2> 
+    <body>
         <div class="container">
 
-            <div class="row">
+            <div id="Opening">
 
-                <div class="col-lg"> 
-                    <div class="container">
-                        
-                            <div class="col-md">
-                            
-                            {{#video_string}}
+                <h2>Scott Cooper
+                    <br>
+                    {{#paragraphData}}
+                    <a href="#websites_Scroll">{{webDevTitle}}</a>/<a
+                        href="#games_Scroll">{{gameDevTitle}}</a>
+                    {{/paragraphData}}
+                </h2>
+                {{#paragraphData}}
+                <p>{{introParagraph1}}</p>
 
+                <p>{{introParagraph2}}</p>
+                {{/paragraphData}}
+            </div>
+
+            <div id="websites_Scroll">
+            </div>
+
+            <div class="BigSpace">
+            </div>
+
+
+
+
+            <!-- Website Menu -->
+
+            <div id="websites">
+
+
+
+
+                <h2>Website Projects</h2>
+                {{#paragraphData}}
+                <p style="text-align: center;">{{webDevParagraph}}</p>
+                {{/paragraphData}}
+                <table>
+
+                    <tr>
+
+                        {{#websiteData}}
+                        {{#isGame}}
+                        {{/isGame}}
+                        {{^isGame}}
+                        <td>
+                            <div class="divider">
+                                <img src={{image0_string}} style="width: 128px;
+                                    height: 128px; display: block;">
+                                <button class="btn" value={{id}}>{{name}}</button>
+                            </div>
+                        </td>
+                        {{/isGame}}
+                        {{/websiteData}}
+                    </tr>
+
+                </table>
+            </div>
+
+            <br>
+
+
+
+            <div class="BigSpace">
+            </div>
+            <div class="BigSpace">
+            </div>
+
+            <div id="games_Scroll">
+
+                <!-- Game Menu -->
+
+                <div id="games">
+                    <h2>Game Projects</h2>
+                    {{#paragraphData}}
+                    <p style="text-align: center;">{{gameDevParagraph}}</p>
+                    {{/paragraphData}}
+                    <table>
+
+                        <tr>
+
+                            {{#websiteData}}
+                            {{#isGame}}
+                            <td>
                                 <div class="divider">
-                                    <iframe width="320" height="256" src={{video_string}} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    <img src={{image0_string}} style="width:
+                                        128px; height: 128px; display: block;">
+                                    <button class="btn" value={{id}}>{{name}}</button>
+                                </div>
+                            </td>
+                            {{/isGame}}
+                            {{/websiteData}}
+                        </tr>
+
+                    </table>
+                </div>
+
+                <!-- Project Information, Images and Links -->
+
+                {{#websiteData}}
+                <div id={{id}} style="display: none;">
+
+
+                    <!--Show row of images, videos and a description at the end. !-->
+                    <div class="divider" style="margin-left: 10%; margin-right:
+                        50%;">
+
+                        <h2 style="padding: 1px; padding-bottom: 10px;
+                            margin-bottom:none;">{{name}}
+                            <button class="close" value={{id}}>X</button>
+                        </h2>
+                        <div class="container">
+
+                            <div class="row">
+
+                                <div class="col-lg">
+                                    <div class="container">
+
+                                        <div class="col-md">
+
+                                            {{#video_string}}
+
+                                            <div class="divider">
+                                                <iframe width="320" height="256"
+                                                    src={{video_string}}
+                                                    frameborder="0"
+                                                    allow="accelerometer;
+                                                    autoplay; encrypted-media;
+                                                    gyroscope;
+                                                    picture-in-picture"
+                                                    allowfullscreen></iframe>
+                                            </div>
+
+                                            {{/video_string}}
+
+                                            <div class="divider">
+                                                <img src={{image0_string}}
+                                                    style="width:320px;height:256px;"
+                                                    class="previewImage">
+                                            </div>
+
+                                        </div>
+
+
+                                        <br>
+                                        <br>
+                                        <div class="col" style="text-align:
+                                            center;">
+                                            <button class="prevPreview"
+                                                id={{id}}_prev> &#8249;
+                                            </button>
+                                            <span>
+                                                <button class="changePreview"
+                                                    value=0 id={{id}}_preview>
+                                                    &nbsp; </button>
+                                                <button class="changePreview"
+                                                    value=1> &nbsp; </button>
+                                                <button class="changePreview"
+                                                    value=2> &nbsp; </button>
+                                                <button class="changePreview"
+                                                    value=3> &nbsp; </button>
+                                            </span>
+                                            <button class="nextPreview"
+                                                id={{id}}_next> &#8250;
+                                            </button>
+                                        </div>
+                                        <br>
+                                        <br>
+
+
+                                    </div>
                                 </div>
 
-                            {{/video_string}}
+                                <div class="col-xl"> <!--Description and links-->
+                                    <div class="container">
 
-                                <div class="divider">
-                                    <img src={{image0_string}} style="width:320px;height:256px;" class="previewImage">
+                                        <!--Description -->
+                                        <div class="col-lg">
+                                            <br>
+                                            {{description0}}
+                                            <br>
+                                            <br>
+                                            {{description1}}
+                                            <br>
+                                            <br>
+                                        </div>
+
+                                        <!--Link to website and/or repository -->
+                                        <div class="col-lg">
+                                            {{#url}}
+                                            <br>
+                                            <br>
+                                            <a href={{url}} class="siteLink"
+                                                target="_blank"> Try it out!</a>
+                                            {{/url}}
+                                            {{#repoLink}}
+                                            <a href={{repoLink}}
+                                                class="repoLink"
+                                                target="_blank"> Source Code
+                                            </a>
+                                            {{/repoLink}}
+                                            <br>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                            <div class="row">
+
+                                <!-- Optional links go below -->
+                                <div class="col-lg">
+
+
+                                </div>
+
+                                <!-- Framework icon -->
+                                <div class="col-xl">
+
+                                    <img src={{frameworkImage_string}}
+                                        style="width:64;height:64px;"
+                                        class="framework">
+
                                 </div>
 
                             </div>
-                        
-                        
-                                <br>
-                                <br>
-                            <div class="col" style="text-align: center;">
-                                <button class="prevPreview" id={{id}}_prev> &#8249; </button>
-                                <span>
-                                    <button class="changePreview" value=0 id={{id}}_preview> &nbsp; </button>
-                                    <button class="changePreview" value=1> &nbsp; </button>
-                                    <button class="changePreview" value=2> &nbsp; </button>
-                                    <button class="changePreview" value=3> &nbsp; </button>
-                                </span>
-                                <button class="nextPreview" id={{id}}_next> &#8250; </button>
-                            </div>
-                                <br>
-                                <br>
-                         
-                    
-                    </div>
-                </div>
-
-                <div class="col-xl"> <!--Description and links-->
-
-                    
-                    <div class="container">
-
-                        <!--Description -->
-                        <div class="col-lg">
-                        <br>
-                        {{description0}}
-                        <br>
-                        <br>
-                        {{description1}}
-                        <br>
-                        <br>
                         </div>
 
-                        <!--Link to website and/or repository -->
-                        <div class="col-lg">                  
-                        {{#url}}
-                        <br>
-                        <br>
-                        <a href={{url}} class="siteLink" target="_blank"> Try it out!</a>
-                        {{/url}}
-                        {{#repoLink}}
-                        <a href={{repoLink}} class="repoLink" target="_blank"> Source Code </a>
-                        {{/repoLink}}
-                        <br>
+                        <div class="itemStrings" style="display: none;">
+                            <p>{{video_string}}</p>
+                            <p>{{image0_string}}</p>
+                            <p>{{image1_string}}</p>
+                            <p>{{image2_string}}</p>
+                            <p>{{image3_string}}</p>
                         </div>
                     </div>
-
-
                 </div>
-            </div>
-            <div class="row">
-                
-                <!-- Optional links go below --> 
-                <div class="col-lg">
-
-                    
-                </div>
-
-                <!-- Framework icon -->
-                <div class="col-xl">
-
-                    <img src={{frameworkImage_string}} style="width:64;height:64px;" class="framework">
-
-                </div>
+                {{/websiteData}}
 
             </div>
-        </div>
-
-        <div class = "itemStrings" style="display: none;">
-            <p>{{video_string}}</p>
-            <p>{{image0_string}}</p>
-            <p>{{image1_string}}</p>
-            <p>{{image2_string}}</p>
-            <p>{{image3_string}}</p>
-        </div>
-    </div>
-    </div>
-    {{/websiteData}}
-
- </div>
 
 
-    <div class="BigSpace">
-    </div>
+            <div class="BigSpace">
+            </div>
 
-<br>
-<br>
-<br>
-<a id="contactMe" href="https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1&source=mailto&su=&to=ScottHRCooper@gmail.com"
-    style="content-align: center;">Contact Me</a>
+            <br>
+            <br>
+            <br>
+            <a id="contactMe"
+                href="https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1&source=mailto&su=&to=ScottHRCooper@gmail.com"
+                style="content-align: center;">Contact Me</a>
 
-</body>
+        </body>
 
-</html>
+    </html>
