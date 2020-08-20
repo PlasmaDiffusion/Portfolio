@@ -14,9 +14,12 @@ document.addEventListener("DOMContentLoaded", () => {
     //Click a button to show information of a website/game.
     if (button.className == "btn") {
       button.onclick = () => {
-        document.getElementById(button.value).style.display = "block";
-        document.getElementById("websites").style.display = "none";
-        document.getElementById("games").style.display = "none";
+        var element = document.getElementById(button.value);
+        if (element) element.style.display = "block";
+        var webElement = document.getElementById("websites");
+        if (webElement) webElement.style.display = "none";
+        var gamesElement = document.getElementById("games");
+        if (gamesElement) gamesElement.style.display = "none";
         document.getElementById("Opening").style.display = "none";
 
         var spaces = document.getElementsByClassName("BigSpace");
@@ -46,9 +49,13 @@ document.addEventListener("DOMContentLoaded", () => {
     //Click close button to get rid of information
     else if (button.className == "close") {
       button.onclick = () => {
-        document.getElementById(button.value).style.display = "none";
-        document.getElementById("websites").style.display = "block";
-        document.getElementById("games").style.display = "block";
+        var element = document.getElementById(button.value);
+        if (element) element.style.display = "none";
+        else console.log("Missing " + button.value);
+        var webElement = document.getElementById("websites");
+        if (webElement) webElement.style.display = "block";
+        var gamesElement = document.getElementById("games");
+        if (gamesElement) gamesElement.style.display = "block";
         document.getElementById("Opening").style.display = "block";
 
         var spaces = document.getElementsByClassName("BigSpace");

@@ -20,17 +20,31 @@
                 <h2>Scott Cooper
                     <br>
                     {{#paragraphData}}
-                    <a href="#websites_Scroll">{{webDevTitle}}</a>/<a
+                    <!-- Web dev title -->
+                    {{#websiteProjectsEnabled}}
+                    <a href="#websites_Scroll">{{webDevTitle}}</a>
+                    {{/websiteProjectsEnabled}}
+                    <!-- Slash if showing both -->
+                    {{#bothProjectTypesEnabled}}
+                    /
+                    {{/bothProjectTypesEnabled}}
+                    <!-- Game dev title -->
+                    {{#gameProjectsEnabled}}<a
                         href="#games_Scroll">{{gameDevTitle}}</a>
+                    {{/gameProjectsEnabled}}
+
+
                     {{/paragraphData}}
                 </h2>
                 {{#paragraphData}}
                 <p>{{introParagraph1}}</p>
 
+
                 <p>{{introParagraph2}}</p>
                 {{/paragraphData}}
             </div>
 
+            {{#websiteProjectsEnabled}}
             <div id="websites_Scroll">
             </div>
 
@@ -41,6 +55,7 @@
 
 
             <!-- Website Menu -->
+
 
             <div id="websites">
 
@@ -79,11 +94,18 @@
 
             <div class="BigSpace">
             </div>
+
+            {{/websiteProjectsEnabled}}
+
+            {{#gameProjectsEnabled}}
             <div class="BigSpace">
             </div>
+            {{/gameProjectsEnabled}}
 
             <div id="games_Scroll">
 
+
+                {{#gameProjectsEnabled}}
                 <!-- Game Menu -->
 
                 <div id="games">
@@ -110,6 +132,8 @@
 
                     </table>
                 </div>
+
+                {{/gameProjectsEnabled}}
 
                 <!-- Project Information, Images and Links -->
 
@@ -256,16 +280,17 @@
             </div>
 
 
+            {{#gameProjectsEnabled}}
             <div class="BigSpace">
             </div>
+            {{/gameProjectsEnabled}}
 
             <br>
             <br>
             <br>
             <a id="contactMe"
                 href="https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1&source=mailto&su=&to=ScottHRCooper@gmail.com"
-                style="content-align: center;">Contact Me</a>
-
+                style="content-align: center; font-size:24pt;">Contact Me</a>
         </body>
 
     </html>

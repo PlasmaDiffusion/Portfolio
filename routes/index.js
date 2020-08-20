@@ -1,20 +1,40 @@
 const express = require("express");
 const router = express.Router();
-const chai = require("chai");
 
-//Login packages
+//Extra packages
+const chai = require("chai");
 const mysql = require("mysql");
 
-//Connection to database
-var connection = mysql.createPool({
-  host: "remotemysql.com",
-  user: "ygBNrggUP3",
-  password: process.env.DB_PASSWORD,
-  database: "ygBNrggUP3",
+//Default page here (Shows all projects)
+router.get("/", (req, res, next) => {
+  readFromDatabase(res);
 });
 
-router.get("/", (req, res, next) => {
+//Page that only shows one kind of project, websites or games
+router.get("/:projectType", (req, res, next) => {
+  console.log(req.params.projectType);
+  readFromDatabase(res, req.params.projectType);
+});
+
+module.exports = router;
+
+function readFromDatabase(res, projectType = "both") {
   var data = {};
+
+  //Set data flags for showing each project type
+  if (projectType == "both" || projectType == "games")
+    data.gameProjectsEnabled = true;
+  if (projectType == "both" || projectType == "websites")
+    data.websiteProjectsEnabled = true;
+  if (projectType == "both") data.bothProjectTypesEnabled = true;
+
+  //Connection to database
+  var connection = mysql.createPool({
+    host: "remotemysql.com",
+    user: "ygBNrggUP3",
+    password: process.env.DB_PASSWORD,
+    database: "ygBNrggUP3",
+  });
 
   //We need to read from two tables asynchronously, so use these flags to
   var gotFromWebsites = false;
@@ -31,7 +51,13 @@ router.get("/", (req, res, next) => {
       gotFromWebsites = true;
     }
 
-    checkIfGotAllData(gotFromParagraphs, gotFromWebsites, data, res);
+    checkIfGotAllData(
+      gotFromParagraphs,
+      gotFromWebsites,
+      data,
+      res,
+      connection
+    );
   });
 
   //Read in general paragraph data
@@ -46,20 +72,39 @@ router.get("/", (req, res, next) => {
     if (results.length > 0) {
       data.paragraphData = results;
 
+      modifyParagraphData(data);
+
       gotFromParagraphs = true;
     }
 
-    checkIfGotAllData(gotFromParagraphs, gotFromWebsites, data, res);
+    checkIfGotAllData(
+      gotFromParagraphs,
+      gotFromWebsites,
+      data,
+      res,
+      connection
+    );
   });
-});
-
-module.exports = router;
+}
 
 //Render index if both table connections were successful
-function checkIfGotAllData(gotFromParagraphs, gotFromWebsites, data, res) {
+function checkIfGotAllData(
+  gotFromParagraphs,
+  gotFromWebsites,
+  data,
+  res,
+  connection
+) {
   if (gotFromParagraphs && gotFromWebsites) {
     console.log(data);
-    connection.end();
+
+    connection.end(function (err) {
+      if (err) {
+        return console.log(err.message);
+      }
+      console.log("Connection pool closed");
+    });
+
     res.render("index", data);
   }
 }
@@ -82,4 +127,15 @@ function orderProjectData(results, data) {
 
   //Now set the finalised website data here
   data.websiteData = orderedArray;
+}
+
+function modifyParagraphData(data) {
+  //Overwrite paragraph 1 depending on if we're showing a specific type of project
+  if (data.bothProjectTypesEnabled) return;
+  if (data.gameProjectsEnabled)
+    data.paragraphData[0].introParagraph1 =
+      data.paragraphData[0].introParagraph1_gamesOnly;
+  else if (data.websiteProjectsEnabled)
+    data.paragraphData[0].introParagraph1 =
+      data.paragraphData[0].introParagraph1_websitesOnly;
 }
