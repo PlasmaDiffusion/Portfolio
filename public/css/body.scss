@@ -1,0 +1,75 @@
+$size: 80px;
+$angle: 45deg;
+
+body {
+  color: white;
+  position: relative;
+  background-color: rgb(2, 0, 12);
+
+  -webkit-background-size: $size $size;
+  -moz-background-size: $size $size;
+  background-size: $size $size; /* Controls the size of the stripes */
+
+  background-image: -webkit-gradient(
+    linear,
+    0 100%,
+    100% 0,
+    color-stop(0.25, rgba(255, 255, 255, 0.025)),
+    color-stop(0.25, transparent),
+    color-stop(0.5, transparent),
+    color-stop(0.5, rgba(255, 255, 255, 0.025)),
+    color-stop(0.75, rgba(255, 255, 255, 0.025)),
+    color-stop(0.75, transparent),
+    to(transparent)
+  );
+  background-image: -webkit-linear-gradient(
+    $angle,
+    rgba(255, 255, 255, 0.025) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.025) 50%,
+    rgba(255, 255, 255, 0.025) 75%,
+    transparent 75%,
+    transparent
+  );
+  background-image: -moz-linear-gradient(
+    $angle,
+    rgba(255, 255, 255, 0.025) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.025) 50%,
+    rgba(255, 255, 255, 0.025) 75%,
+    transparent 75%,
+    transparent
+  );
+  background-image: -ms-linear-gradient(
+    $angle,
+    rgba(255, 255, 255, 0.025) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.025) 50%,
+    rgba(255, 255, 255, 0.025) 75%,
+    transparent 75%,
+    transparent
+  );
+  background-image: -o-linear-gradient(
+    $angle,
+    rgba(255, 255, 255, 0.025) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.025) 50%,
+    rgba(255, 255, 255, 0.025) 75%,
+    transparent 75%,
+    transparent
+  );
+  background-image: linear-gradient(
+    $angle,
+    rgba(255, 255, 255, 0.025) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.025) 50%,
+    rgba(255, 255, 255, 0.025) 75%,
+    transparent 75%,
+    transparent
+  );
+}

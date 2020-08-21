@@ -1,14 +1,14 @@
-$col1: rgb(26, 34, 37);
-$col2: rgb(94, 134, 148);
-$col3: rgb(0, 0, 0);
-$col4: rgb(136, 137, 141);
+//Main colours
 $headCol: rgb(0, 39, 54);
 $outlineCol: rgb(0, 75, 105);
+$blockColour: rgb(26, 34, 37);
+$titleColour: #526eb8;
+$bgColour: rgb(0, 0, 0);
 
 body {
-  background-color: $col3;
   color: white;
   position: relative;
+  background-color: $bgColour;
 }
 
 p {
@@ -16,7 +16,7 @@ p {
 }
 
 %title {
-  color: $col2;
+  color: $titleColour;
   text-align: center;
   border-radius: 4px;
 }
@@ -28,9 +28,9 @@ h2 {
 
 ol,
 tr {
-  background-color: $col1;
+  background-color: $blockColour;
   border-radius: 4px;
-  color: $col4;
+  color: rgb(136, 137, 141);
 }
 
 table {
@@ -38,18 +38,11 @@ table {
   border-radius: 4px;
   //width:150%;
   display: block;
-  color: $col2;
+  color: $titleColour;
   padding: 10px;
   padding-top: 0px;
   //padding-right: 50%;
   overflow-x: auto;
-}
-
-.description {
-  //padding-left: 20%;
-  //padding-top: 5%;
-  //padding-right: 5%;
-  //width: 200%;
 }
 
 //Main panels
@@ -59,7 +52,7 @@ table {
   width: 60%;
   border-radius: 4px;
   display: block;
-  background-color: $col1;
+  background-color: $blockColour;
   margin-left: auto;
   margin-right: auto;
   margin-top: none;
@@ -68,7 +61,7 @@ table {
 }
 
 .row {
-  background-color: $col1;
+  background-color: $blockColour;
   width: 150%;
   border-radius: 4px;
   padding-top: 16px;
@@ -79,11 +72,10 @@ h2 {
   padding: 60px;
   text-align: center;
   background: $headCol;
-  color: white;
   font-size: 30px;
 }
 
-//Buttons for changing images/videos
+//Buttons for changing images/videos -----------------------------------------
 .changePreview {
   border-radius: 50%;
   width: 32px;
@@ -128,6 +120,8 @@ h2 {
 .changePreviewEmpty {
   display: none;
 }
+
+//----------------------------------------------------------------------------
 
 //Buttons to other sites or closing -----------------------
 .repoLink,
@@ -179,12 +173,14 @@ img {
 }
 //--------------------------------------------
 
+//Link at bottom linking to email
 #contactMe {
   text-align: center;
   font-size: 24px;
   display: block;
 }
 
+//Alternative to spamming BR BR BR
 .BigSpace {
   width: 200px;
   background: none;
@@ -235,3 +231,25 @@ img {
   opacity: 100%;
   transition: opacity 0.5s;
 }
+
+/* Scrollbar ----------------------------------------------------------------------------------*/
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: $blockColour;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $outlineCol;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: $titleColour;
+}
+/* ---------------------------------------------------------------------------------------------------------------------------------- */

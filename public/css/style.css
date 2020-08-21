@@ -1,14 +1,14 @@
 body {
-  background-color: black;
   color: white;
-  position: relative; }
+  position: relative;
+  background-color: black; }
 
 p {
   padding: 1%; }
 
 h1,
 h2 {
-  color: #5e8694;
+  color: #526eb8;
   text-align: center;
   border-radius: 4px; }
 
@@ -21,7 +21,7 @@ tr {
 table {
   border-radius: 4px;
   display: block;
-  color: #5e8694;
+  color: #526eb8;
   padding: 10px;
   padding-top: 0px;
   overflow-x: auto; }
@@ -50,7 +50,6 @@ h2 {
   padding: 60px;
   text-align: center;
   background: #002736;
-  color: white;
   font-size: 30px; }
 
 .changePreview {
@@ -183,5 +182,24 @@ img {
   visibility: visible;
   opacity: 100%;
   transition: opacity 0.5s; }
+
+/* Scrollbar ----------------------------------------------------------------------------------*/
+/* width */
+::-webkit-scrollbar {
+  width: 10px; }
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #1a2225; }
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #004b69; }
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #526eb8; }
+
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
 
 /*# sourceMappingURL=style.css.map */
