@@ -17,7 +17,8 @@
 
             <div id="Opening">
 
-                <h2>Scott Cooper
+                <h2 style="border-top-left-radius: 0;
+                    border-top-right-radius: 0;">Scott Cooper
                     <br>
                     {{#paragraphData}}
                     <!-- Web dev title -->
@@ -146,12 +147,14 @@
                         50%;">
 
                         <h2 style="padding: 1px; padding-bottom: 10px;
-                            margin-bottom:none;">{{name}}
+                            margin-bottom:none; width:141.5%;">{{name}}
                             <button class="close" value={{id}}>X</button>
                         </h2>
                         <div class="container">
 
-                            <div class="row">
+                            <div class="row"
+                                style="border-bottom-left-radius: 0;
+                                border-bottom-right-radius: 0;">
 
                                 <div class="col-lg">
                                     <div class="container">
@@ -175,7 +178,6 @@
 
                                             <div class="divider">
                                                 <img src={{image0_string}}
-                                                    style="width:320px;height:256px;"
                                                     class="previewImage">
                                             </div>
 
@@ -246,7 +248,8 @@
 
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row" style="border-top-left-radius: 0;
+                                border-top-right-radius: 0;">
 
                                 <!-- Optional links go below -->
                                 <div class="col-lg">

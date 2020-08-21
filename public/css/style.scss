@@ -1,215 +1,207 @@
-$col1 : rgb(26, 34, 37);
-$col2 : rgb(94, 134, 148);
-$col3 : rgb(0, 0, 0);
-$col4 : rgb(136, 137, 141);
+$col1: rgb(26, 34, 37);
+$col2: rgb(94, 134, 148);
+$col3: rgb(0, 0, 0);
+$col4: rgb(136, 137, 141);
 $headCol: rgb(0, 39, 54);
 $outlineCol: rgb(0, 75, 105);
 
-body
-{
-    background-color: $col3;
-    color: white;
-    position: relative;
+body {
+  background-color: $col3;
+  color: white;
+  position: relative;
 }
 
-p 
-{
-    padding: 1%;
+p {
+  padding: 1%;
 }
 
-%title
-{
-    color: $col2;
-    text-align: center;
+%title {
+  color: $col2;
+  text-align: center;
+  border-radius: 4px;
 }
 
-h1, h2
-{
-    @extend %title;
+h1,
+h2 {
+  @extend %title;
 }
 
-ol, tr
-{
-    background-color: $col1;
-    border-radius: 4px;
-    color:$col4;
-    
+ol,
+tr {
+  background-color: $col1;
+  border-radius: 4px;
+  color: $col4;
 }
 
-table
-{
-    //max-width: 200%;
-    border-radius: 4px;
-    //width:150%;
-    display:block;
-    color: $col2;
-    padding: 10px;
-    padding-top: 0px;
-    //padding-right: 50%;
-    overflow-x: auto;
+table {
+  //max-width: 200%;
+  border-radius: 4px;
+  //width:150%;
+  display: block;
+  color: $col2;
+  padding: 10px;
+  padding-top: 0px;
+  //padding-right: 50%;
+  overflow-x: auto;
 }
 
-.description
-{
-    //padding-left: 20%;
-    //padding-top: 5%;
-    //padding-right: 5%;
-    //width: 200%;
+.description {
+  //padding-left: 20%;
+  //padding-top: 5%;
+  //padding-right: 5%;
+  //width: 200%;
 }
 
 //Main panels
-#websites, #games, #Opening
-{
-
-
-    width:60%;
-    border-radius: 4px;
-    display:block;
-    background-color: $col1;
-    margin-left:auto;
-    margin-right:auto;
-    margin-top:none;
-    margin-left:none;
-    padding:0;
-
+#websites,
+#games,
+#Opening {
+  width: 60%;
+  border-radius: 4px;
+  display: block;
+  background-color: $col1;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: none;
+  margin-left: none;
+  padding: 0;
 }
 
-.row
-{
-        
-        background-color: $col1;
-        width:150%;
-        
+.row {
+  background-color: $col1;
+  width: 150%;
+  border-radius: 4px;
+  padding-top: 16px;
 }
-
-
 
 /* Header/Logo Title */
 h2 {
-    padding: 60px;
-    text-align: center;
-    background: $headCol;
-    color: white;
-    font-size: 30px;
-  }
+  padding: 60px;
+  text-align: center;
+  background: $headCol;
+  color: white;
+  font-size: 30px;
+}
 
 //Buttons for changing images/videos
-.changePreview
-{
-    border-radius: 50%;
-    width: 32px;
-    height: 32px;
-    transition-duration: 0.3s;
-    background-color: black;
-    color: black;
-    fill-opacity: 0%;
-    border: 2px solid black;
+.changePreview {
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  transition-duration: 0.3s;
+  background-color: black;
+  color: black;
+  fill-opacity: 0%;
+  border: 2px solid black;
 }
-.changePreview:hover
-{
-    background-color: white;
-    color: black;
-    opacity: 50%;
-    fill-opacity: 50%;
-    border: 2px solid black;
+.changePreview:hover {
+  background-color: white;
+  color: black;
+  opacity: 50%;
+  fill-opacity: 50%;
+  border: 2px solid black;
 }
 
-.changePreviewSelected, .nextPreview, .prevPreview
-{
-    border-radius: 50%;
-    width: 32px;
-    height: 32px;
-    transition-duration: 0.3s;
-    background-color: white;
-    color: black;
-    fill-opacity: 0%;
-    border: 2px solid black;
+.changePreviewSelected,
+.nextPreview,
+.prevPreview {
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  transition-duration: 0.3s;
+  background-color: white;
+  color: black;
+  fill-opacity: 0%;
+  border: 2px solid black;
 }
-.nextPreview, .prevPreview
-{
-    background-color: $outlineCol;
-    color:rgb(0, 123, 255);
-    border: none;
+.nextPreview,
+.prevPreview {
+  background-color: $outlineCol;
+  color: rgb(0, 123, 255);
+  border: none;
 }
-.nextPreview:hover, .prevPreview:hover
-{
-    background-color: $headCol;
-}
-
-
-.changePreviewEmpty
-{
-    display: none;
+.nextPreview:hover,
+.prevPreview:hover {
+  background-color: $headCol;
 }
 
-//Buttons to other sites -----------------------
-.repoLink, .siteLink
-{
-    background-color: $outlineCol;
-    text-decoration: none;
-    margin:5px;
-    padding: 5px;
+.changePreviewEmpty {
+  display: none;
 }
 
-.repoLink:hover, .siteLink:hover
-{
-    background-color: $headCol;
-    text-decoration: none;
+//Buttons to other sites or closing -----------------------
+.repoLink,
+.siteLink {
+  background-color: $outlineCol;
+  text-decoration: none;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 4px;
+}
+
+.repoLink:hover,
+.siteLink:hover {
+  background-color: $headCol;
+  text-decoration: none;
+}
+
+.close,
+.close:link,
+.close:visited {
+  background-color: $outlineCol;
+  color: white;
+  margin: 10px;
+}
+
+.close:hover,
+.close:active {
+  color: red;
+  margin: 10px;
 }
 //----------------------------------------------
 
 //Images ---------------------------------------
-img
-{
-    width: 128px;
-    height: 128px;
-    display: block;
-    
-    padding:2px;
-    border:2px solid $outlineCol;
-    background-color:$headCol;
+img {
+  width: 128px;
+  height: 128px;
+  display: block;
+
+  padding: 2px;
+  border: 2px solid $outlineCol;
+  background-color: $headCol;
 }
 
-.framework
-{
-    float: right;
-    padding:none;
-    border:none;
-    background-color:transparent;
+.framework {
+  float: right;
+  padding: none;
+  border: none;
+  background-color: transparent;
 }
 //--------------------------------------------
 
-
-#contactMe
-{
-    text-align: center;
-    font-size: 24px;
-    display: block;
+#contactMe {
+  text-align: center;
+  font-size: 24px;
+  display: block;
 }
 
-
-.BigSpace
-{
-width:200px;background:none;height:200px;display:inline-block;
+.BigSpace {
+  width: 200px;
+  background: none;
+  height: 200px;
+  display: inline-block;
 }
 
 /* divider needed to position the button. Adjust the width as needed */
 .divider {
-    position: relative;
-    width: 50%;
-  }
-  
-  /* Make the image responsive */
-  .divider img {
-    width: 100%;
-    height: auto;
-  }
+  position: relative;
+  width: 50%;
+}
 
-.close
-{
-    color: rgb(212, 7, 7);
-    background-color: $outlineCol;
-    margin: 10px;
+/* Make the image responsive */
+.previewImage {
+  width: 200%;
+  height: auto;
 }
 
 /*html
@@ -217,36 +209,29 @@ width:200px;background:none;height:200px;display:inline-block;
 	scroll-behavior: smooth; //Unused janky smooth scrollbar
 }*/
 
-
-  
-
 /* Style the button and place it in the middle of the divider/image */
-.divider .btn{
-    position: absolute;
-    top: 50%;
-    left: 100%;
-    width: 150%;
-    height: 80%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    background-color: #555;
-    color: white;
-    font-size: 16px;
-    padding: 12px 24px;
-    border: none;
-    cursor: pointer;
-    border-radius: 0px;
-    opacity: 0%;
-    transition: opacity 0.5s;
+.divider .btn {
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  width: 150%;
+  height: 80%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #555;
+  color: white;
+  font-size: 16px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 0px;
+  opacity: 0%;
+  transition: opacity 0.5s;
+}
 
-  }
-  
-  .divider .btn:hover {
-    background-color: black;
-    visibility: visible;
-    opacity: 100%;
-    transition: opacity 0.5s;
-  }
-  
-
-  
+.divider .btn:hover {
+  background-color: black;
+  visibility: visible;
+  opacity: 100%;
+  transition: opacity 0.5s;
+}

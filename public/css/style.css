@@ -6,11 +6,14 @@ body {
 p {
   padding: 1%; }
 
-h1, h2 {
+h1,
+h2 {
   color: #5e8694;
-  text-align: center; }
+  text-align: center;
+  border-radius: 4px; }
 
-ol, tr {
+ol,
+tr {
   background-color: #1a2225;
   border-radius: 4px;
   color: #88898d; }
@@ -23,7 +26,9 @@ table {
   padding-top: 0px;
   overflow-x: auto; }
 
-#websites, #games, #Opening {
+#websites,
+#games,
+#Opening {
   width: 60%;
   border-radius: 4px;
   display: block;
@@ -36,7 +41,9 @@ table {
 
 .row {
   background-color: #1a2225;
-  width: 150%; }
+  width: 150%;
+  border-radius: 4px;
+  padding-top: 16px; }
 
 /* Header/Logo Title */
 h2 {
@@ -63,7 +70,9 @@ h2 {
   fill-opacity: 50%;
   border: 2px solid black; }
 
-.changePreviewSelected, .nextPreview, .prevPreview {
+.changePreviewSelected,
+.nextPreview,
+.prevPreview {
   border-radius: 50%;
   width: 32px;
   height: 32px;
@@ -73,26 +82,43 @@ h2 {
   fill-opacity: 0%;
   border: 2px solid black; }
 
-.nextPreview, .prevPreview {
+.nextPreview,
+.prevPreview {
   background-color: #004b69;
   color: #007bff;
   border: none; }
 
-.nextPreview:hover, .prevPreview:hover {
+.nextPreview:hover,
+.prevPreview:hover {
   background-color: #002736; }
 
 .changePreviewEmpty {
   display: none; }
 
-.repoLink, .siteLink {
+.repoLink,
+.siteLink {
   background-color: #004b69;
   text-decoration: none;
   margin: 5px;
-  padding: 5px; }
+  padding: 5px;
+  border-radius: 4px; }
 
-.repoLink:hover, .siteLink:hover {
+.repoLink:hover,
+.siteLink:hover {
   background-color: #002736;
   text-decoration: none; }
+
+.close,
+.close:link,
+.close:visited {
+  background-color: #004b69;
+  color: white;
+  margin: 10px; }
+
+.close:hover,
+.close:active {
+  color: red;
+  margin: 10px; }
 
 img {
   width: 128px;
@@ -125,14 +151,9 @@ img {
   width: 50%; }
 
 /* Make the image responsive */
-.divider img {
-  width: 100%;
+.previewImage {
+  width: 200%;
   height: auto; }
-
-.close {
-  color: #d40707;
-  background-color: #004b69;
-  margin: 10px; }
 
 /*html
 {
