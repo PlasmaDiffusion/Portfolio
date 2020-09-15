@@ -8,7 +8,8 @@ body,
 p {
   padding: 1%; }
 
-.blue {
+.blue,
+i {
   color: #526eb8; }
 
 h1,

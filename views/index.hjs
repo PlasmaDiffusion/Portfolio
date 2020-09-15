@@ -69,7 +69,7 @@
 
                 <h2>Website Projects</h2>
                 {{#paragraphData}}
-                <p style="text-align: center;">{{webDevParagraph}}</p>
+                <p style="text-align: center;" class="lead">{{webDevParagraph}}</p>
                 {{/paragraphData}}
                 <table>
 
@@ -98,7 +98,7 @@
                 {{#paragraphData}}
                 <ul class="list-group">
                     <li class="list-group-item list-group-item-dark
-                        list-group-item-action colour"
+                        list-group-item-action colour blue"
                         data-toggle="collapse"
                         data-target="#webDevSkillList"><b>Web
                             Developer Skills</b></li>
@@ -140,7 +140,7 @@
                 <div id="games">
                     <h2>Game Projects</h2>
                     {{#paragraphData}}
-                    <p style="text-align: center;">{{gameDevParagraph}}</p>
+                    <p style="text-align: center;" class="lead">{{gameDevParagraph}}</p>
                     {{/paragraphData}}
                     <table>
 
@@ -167,7 +167,7 @@
                     {{#paragraphData}}
                     <ul class="list-group">
                         <li class="list-group-item list-group-item-dark
-                            list-group-item-action colour"
+                            list-group-item-action colour blue"
                             data-toggle="collapse"
                             data-target="#gameDevSkillList"><b>Game
                                 Programmer Skills</b></li>
