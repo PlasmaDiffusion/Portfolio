@@ -1,5 +1,10 @@
 //Global functions -----------------------------------------------------------------------------------------
 
+export function ChangeElementDisplay(id, display) {
+  var webElement = document.getElementById(id);
+  if (webElement) webElement.style.display = display;
+}
+
 //When a preview button is clicked, find the html elements that have said preview data.
 export function ChangePreviewImage(button) {
   //Now find the hidden <p>s that contain image or video data

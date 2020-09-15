@@ -10,15 +10,21 @@
             href="/css/bootstrap/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="/css/style.css">
         <script type="module" src="js/menuEvents.js"></script>
+        <script
+            src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script
+            src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     </head>
 
     <body>
         <div class="container">
 
-            <div id="Opening">
+            <div id="Opening" class="jumbotron">
 
                 <h2 style="border-top-left-radius: 0;
-                    border-top-right-radius: 0;">Scott Cooper
+                    border-top-right-radius: 0;" class="display-4">Scott Cooper
                     <br>
                     {{#paragraphData}}
                     <!-- Web dev title -->
@@ -38,10 +44,10 @@
                     {{/paragraphData}}
                 </h2>
                 {{#paragraphData}}
-                <p>{{introParagraph1}}</p>
+                <p class="lead">{{introParagraph1}}</p>
 
 
-                <p>{{introParagraph2}}</p>
+                <p class="lead">{{introParagraph2}}</p>
                 {{/paragraphData}}
             </div>
 
@@ -59,8 +65,6 @@
 
 
             <div id="websites">
-
-
 
 
                 <h2>Website Projects</h2>
@@ -89,6 +93,29 @@
                 </table>
             </div>
 
+            <!-- Website Skills -->
+            <div id="webDevSkills" class="main">
+                {{#paragraphData}}
+                <ul class="list-group">
+                    <li class="list-group-item list-group-item-dark
+                        list-group-item-action colour"
+                        data-toggle="collapse"
+                        data-target="#webDevSkillList"><b>Web
+                            Developer Skills</b></li>
+                    {{#webDevSkills}}
+                    <div id="webDevSkillList" class="collapse">
+
+                        <li class="list-group-item
+                            list-group-item-dark
+                            colour">{{{name}}}</li>
+                    </div>
+
+                    {{/webDevSkills}}
+                </ul>
+                {{/paragraphData}}
+
+            </div>
+
             <br>
 
 
@@ -102,6 +129,7 @@
             <div class="BigSpace">
             </div>
             {{/gameProjectsEnabled}}
+
 
             <div id="games_Scroll">
 
@@ -132,6 +160,29 @@
                         </tr>
 
                     </table>
+                </div>
+
+                <!--Game Dev Skills -->
+                <div id="gameDevSkills" class="main">
+                    {{#paragraphData}}
+                    <ul class="list-group">
+                        <li class="list-group-item list-group-item-dark
+                            list-group-item-action colour"
+                            data-toggle="collapse"
+                            data-target="#gameDevSkillList"><b>Game
+                                Programmer Skills</b></li>
+                        {{#gameDevSkills}}
+                        <div id="gameDevSkillList" class="collapse">
+
+                            <li class="list-group-item
+                                list-group-item-dark
+                                colour">{{name}}</li>
+                        </div>
+
+                        {{/gameDevSkills}}
+                    </ul>
+                    {{/paragraphData}}
+
                 </div>
 
                 {{/gameProjectsEnabled}}

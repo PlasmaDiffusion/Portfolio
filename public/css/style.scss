@@ -5,14 +5,20 @@ $blockColour: rgb(26, 34, 37);
 $titleColour: #526eb8;
 $bgColour: rgb(0, 0, 0);
 
-body {
+body,
+.colour {
   color: white;
   position: relative;
   background-color: $bgColour;
+  border-color: $blockColour;
 }
 
 p {
   padding: 1%;
+}
+
+.blue {
+  color: $titleColour;
 }
 
 %title {
@@ -48,7 +54,9 @@ table {
 //Main panels
 #websites,
 #games,
-#Opening {
+#Opening,
+.main,
+.jumbotron {
   width: 60%;
   border-radius: 4px;
   display: block;

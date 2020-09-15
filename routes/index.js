@@ -12,7 +12,7 @@ router.get("/", (req, res, next) => {
 
 //Page that only shows one kind of project, websites or games
 router.get("/:projectType", (req, res, next) => {
-  console.log(req.params.projectType);
+  //console.log(req.params.projectType);
   readFromDatabase(res, req.params.projectType);
 });
 
@@ -73,6 +73,7 @@ function readFromDatabase(res, projectType = "both") {
       data.paragraphData = results;
 
       modifyParagraphData(data);
+      splitSkillString(data);
 
       gotFromParagraphs = true;
     }
@@ -96,7 +97,7 @@ function checkIfGotAllData(
   connection
 ) {
   if (gotFromParagraphs && gotFromWebsites) {
-    console.log(data);
+    //console.log(data);
 
     connection.end(function (err) {
       if (err) {
@@ -127,6 +128,36 @@ function orderProjectData(results, data) {
 
   //Now set the finalised website data here
   data.websiteData = orderedArray;
+}
+
+//Make two arrays of skills to display from a split string
+function splitSkillString(data) {
+  //Make a WebDev skill string
+  var splitArray = data.paragraphData[0].webDevSkills.split("|");
+  var skillArray = [];
+  splitArray.forEach((element) => {
+    //This is needed so it can be used like a map with hogan
+    skillArray.push({ name: element });
+    console.log(element);
+  });
+  data.paragraphData[0].webDevSkills = skillArray;
+
+  //Make a GameDev skill string
+  splitArray = data.paragraphData[0].gameDevSkills.split("|");
+  skillArray = [];
+  splitArray.forEach((element) => {
+    skillArray.push({ name: element });
+    console.log(element);
+  });
+  data.paragraphData[0].gameDevSkills = skillArray;
+
+  //Confirm there's now an array of strings instead of one giant string
+  var assert = chai.assert;
+  assert.isAbove(
+    data.paragraphData[0].webDevSkills.length,
+    0,
+    "skill array length is greater than 1"
+  );
 }
 
 function modifyParagraphData(data) {

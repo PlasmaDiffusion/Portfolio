@@ -2,6 +2,7 @@ import {
   ChangePreviewImage,
   CheckIfVideoOrImage,
   GetValueOfSelectedButton,
+  ChangeElementDisplay,
 } from "./menuFunctions.js";
 
 //Button click events ---------------------------------------------------------------------------------------------
@@ -14,13 +15,12 @@ document.addEventListener("DOMContentLoaded", () => {
     //Click a button to show information of a website/game.
     if (button.className == "btn") {
       button.onclick = () => {
-        var element = document.getElementById(button.value);
-        if (element) element.style.display = "block";
-        var webElement = document.getElementById("websites");
-        if (webElement) webElement.style.display = "none";
-        var gamesElement = document.getElementById("games");
-        if (gamesElement) gamesElement.style.display = "none";
-        document.getElementById("Opening").style.display = "none";
+        ChangeElementDisplay(button.value, "block");
+        ChangeElementDisplay("websites", "none");
+        ChangeElementDisplay("games", "none");
+        ChangeElementDisplay("Opening", "none");
+        ChangeElementDisplay("webDevSkills", "none");
+        ChangeElementDisplay("gameDevSkills", "none");
 
         var spaces = document.getElementsByClassName("BigSpace");
         [].forEach.call(spaces, function (spaces) {
@@ -49,14 +49,12 @@ document.addEventListener("DOMContentLoaded", () => {
     //Click close button to get rid of information
     else if (button.className == "close") {
       button.onclick = () => {
-        var element = document.getElementById(button.value);
-        if (element) element.style.display = "none";
-        else console.log("Missing " + button.value);
-        var webElement = document.getElementById("websites");
-        if (webElement) webElement.style.display = "block";
-        var gamesElement = document.getElementById("games");
-        if (gamesElement) gamesElement.style.display = "block";
-        document.getElementById("Opening").style.display = "block";
+        ChangeElementDisplay(button.value, "none");
+        ChangeElementDisplay("websites", "block");
+        ChangeElementDisplay("games", "block");
+        ChangeElementDisplay("Opening", "block");
+        ChangeElementDisplay("webDevSkills", "block");
+        ChangeElementDisplay("gameDevSkills", "block");
 
         var spaces = document.getElementsByClassName("BigSpace");
         [].forEach.call(spaces, function (spaces) {
