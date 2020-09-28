@@ -5,6 +5,21 @@ body,
   background-color: black;
   border-color: #1a2225; }
 
+body {
+  color: white;
+  position: relative;
+  background-color: #02000c;
+  -webkit-background-size: 80px 80px;
+  -moz-background-size: 80px 80px;
+  background-size: 80px 80px;
+  /* Controls the size of the stripes */
+  background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(0.25, rgba(255, 255, 255, 0.025)), color-stop(0.25, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(255, 255, 255, 0.025)), color-stop(0.75, rgba(255, 255, 255, 0.025)), color-stop(0.75, transparent), to(transparent));
+  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.025) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.025) 50%, rgba(255, 255, 255, 0.025) 75%, transparent 75%, transparent);
+  background-image: -moz-linear-gradient(45deg, rgba(255, 255, 255, 0.025) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.025) 50%, rgba(255, 255, 255, 0.025) 75%, transparent 75%, transparent);
+  background-image: -ms-linear-gradient(45deg, rgba(255, 255, 255, 0.025) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.025) 50%, rgba(255, 255, 255, 0.025) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.025) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.025) 50%, rgba(255, 255, 255, 0.025) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.025) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.025) 50%, rgba(255, 255, 255, 0.025) 75%, transparent 75%, transparent); }
+
 p {
   padding: 1%; }
 
@@ -61,9 +76,8 @@ h2 {
   font-size: 30px; }
 
 .changePreview {
-  border-radius: 50%;
   width: 32px;
-  height: 32px;
+  height: 4px;
   transition-duration: 0.3s;
   background-color: black;
   color: black;
@@ -80,9 +94,8 @@ h2 {
 .changePreviewSelected,
 .nextPreview,
 .prevPreview {
-  border-radius: 50%;
   width: 32px;
-  height: 32px;
+  height: 4px;
   transition-duration: 0.3s;
   background-color: white;
   color: black;
@@ -98,6 +111,17 @@ h2 {
 .nextPreview:hover,
 .prevPreview:hover {
   background-color: #002736; }
+
+.nextPreview {
+  width: 0;
+  height: 0;
+  border-top: 32px solid #002736;
+  border-bottom: 32px solid #002736;
+  border-left: 32px solid #1a2225; }
+
+.prevPreview {
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px; }
 
 .changePreviewEmpty {
   display: none; }
@@ -209,5 +233,15 @@ img {
   background: #526eb8; }
 
 /* ---------------------------------------------------------------------------------------------------------------------------------- */
+@media only screen and (max-width: 768px) {
+  #websites,
+  #games,
+  #Opening,
+  .main,
+  .jumbotron {
+    width: 90%; }
+
+  .row {
+    width: 200%; } }
 
 /*# sourceMappingURL=style.css.map */

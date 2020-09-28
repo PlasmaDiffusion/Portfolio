@@ -13,6 +13,8 @@ body,
   border-color: $blockColour;
 }
 
+@import "body.scss";
+
 p {
   padding: 1%;
 }
@@ -86,9 +88,8 @@ h2 {
 
 //Buttons for changing images/videos -----------------------------------------
 .changePreview {
-  border-radius: 50%;
   width: 32px;
-  height: 32px;
+  height: 4px;
   transition-duration: 0.3s;
   background-color: black;
   color: black;
@@ -106,9 +107,8 @@ h2 {
 .changePreviewSelected,
 .nextPreview,
 .prevPreview {
-  border-radius: 50%;
   width: 32px;
-  height: 32px;
+  height: 4px;
   transition-duration: 0.3s;
   background-color: white;
   color: black;
@@ -124,6 +124,18 @@ h2 {
 .nextPreview:hover,
 .prevPreview:hover {
   background-color: $headCol;
+}
+.nextPreview {
+  width: 0;
+  height: 0;
+  border-top: 32px solid $headCol;
+  border-bottom: 32px solid $headCol;
+
+  border-left: 32px solid $blockColour;
+}
+.prevPreview {
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
 }
 
 .changePreviewEmpty {
@@ -262,3 +274,17 @@ img {
   background: $titleColour;
 }
 /* ---------------------------------------------------------------------------------------------------------------------------------- */
+
+@media only screen and (max-width: 768px) {
+  #websites,
+  #games,
+  #Opening,
+  .main,
+  .jumbotron {
+    width: 90%;
+  }
+
+  .row {
+    width: 200%;
+  }
+}

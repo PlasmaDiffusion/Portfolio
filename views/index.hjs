@@ -239,23 +239,29 @@
                                         <br>
                                         <div class="col" style="text-align:
                                             center;">
-                                            <button class="prevPreview"
-                                                id={{id}}_prev> &#8249;
-                                            </button>
+                                            <!--<button class="prevPreview"
+                                                id={{id}}_prev>
+                                            </button> -->
                                             <span>
                                                 <button class="changePreview"
                                                     value=0 id={{id}}_preview>
-                                                    &nbsp; </button>
+                                                    <br><br><br>
+                                                </button>
                                                 <button class="changePreview"
-                                                    value=1> &nbsp; </button>
+                                                    value=1>
+                                                    <br><br><br>
+                                                </button>
                                                 <button class="changePreview"
-                                                    value=2> &nbsp; </button>
+                                                    value=2>
+                                                    <br><br><br>
+                                                </button>
                                                 <button class="changePreview"
-                                                    value=3> &nbsp; </button>
+                                                    value=3> <br><br><br>
+                                                </button>
                                             </span>
-                                            <button class="nextPreview"
-                                                id={{id}}_next> &#8250;
-                                            </button>
+                                            <!--<button class="nextPreview"
+                                                id={{id}}_next>
+                                            </button> -->
                                         </div>
                                         <br>
                                         <br>
@@ -343,7 +349,7 @@
             <br>
             <br>
             <a id="contactMe"
-                href="https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1&source=mailto&su=&to=ScottHRCooper@gmail.com"
+                href="https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1&source=mailto&su=&to=ScottCooperDeveloper@gmail.com"
                 style="content-align: center; font-size:24pt;">Contact Me</a>
         </body>
 
