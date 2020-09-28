@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
   //Find all buttons
   document.querySelectorAll("button").forEach((button) => {
     //Click a button to show information of a website/game.
-    if (button.className == "btn") {
+    if (button.className == "btn" || button.className == "bigBtn") {
       button.onclick = () => {
         ChangeElementDisplay(button.value, "block");
         ChangeElementDisplay("websites", "none");
@@ -31,11 +31,16 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById(button.value + "_preview").click();
 
         //Save what the last menu was
-        lastMenu =
-          "#" +
-          button.parentNode.parentNode.parentNode.parentNode.parentNode
-            .parentNode.id +
-          "_Scroll";
+        if (button.className == "btn")
+          lastMenu =
+            "#" +
+            button.parentNode.parentNode.parentNode.parentNode.parentNode
+              .parentNode.id;
+
+        if (button.className == "bigBtn")
+          lastMenu =
+            "#" +
+            button.parentNode.parentNode.parentNode.parentNode.parentNode.id;
 
         //Move to top of screen to see the whole thing
         window.location.href = "#top";

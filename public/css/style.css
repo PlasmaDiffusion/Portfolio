@@ -159,6 +159,10 @@ img {
   border: 2px solid #004b69;
   background-color: #002736; }
 
+.bigImg {
+  width: 256px;
+  height: 256px; }
+
 .framework {
   float: right;
   padding: none;
@@ -191,7 +195,8 @@ img {
 	scroll-behavior: smooth; //Unused janky smooth scrollbar
 }*/
 /* Style the button and place it in the middle of the divider/image */
-.divider .btn {
+.divider .btn,
+.bigBtn {
   position: absolute;
   top: 50%;
   left: 100%;
@@ -209,11 +214,16 @@ img {
   opacity: 0%;
   transition: opacity 0.5s; }
 
-.divider .btn:hover {
+.divider .btn:hover,
+.bigBtn:hover {
   background-color: black;
   visibility: visible;
   opacity: 100%;
   transition: opacity 0.5s; }
+
+.bigBtn {
+  left: 109%;
+  width: 200%; }
 
 /* Scrollbar ----------------------------------------------------------------------------------*/
 /* width */
