@@ -29,7 +29,7 @@
                     {{#paragraphData}}
                     <!-- Web dev title -->
                     {{#websiteProjectsEnabled}}
-                    <a href="#websites_Scroll">{{webDevTitle}}</a>
+                    <a href="#websites">{{webDevTitle}}</a>
                     {{/websiteProjectsEnabled}}
                     <!-- Slash if showing both -->
                     {{#bothProjectTypesEnabled}}
@@ -37,7 +37,7 @@
                     {{/bothProjectTypesEnabled}}
                     <!-- Game dev title -->
                     {{#gameProjectsEnabled}}<a
-                        href="#games_Scroll">{{gameDevTitle}}</a>
+                        href="#games">{{gameDevTitle}}</a>
                     {{/gameProjectsEnabled}}
 
 
