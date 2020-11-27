@@ -30,10 +30,10 @@ function readFromDatabase(res, projectType = "both") {
 
   //Connection to database
   var connection = mysql.createPool({
-    host: "remotemysql.com",
-    user: "ygBNrggUP3",
-    password: process.env.DB_PASSWORD,
-    database: "ygBNrggUP3",
+    host: "sql9.freemysqlhosting.net",
+    user: process.env.DATABASE,
+    password: process.env.DB_PASS,
+    database: process.env.DATABASE,
   });
 
   //We need to read from two tables asynchronously, so use these flags to
@@ -41,7 +41,7 @@ function readFromDatabase(res, projectType = "both") {
   var gotFromParagraphs = false;
 
   //Read in website/game data
-  connection.query("SELECT * FROM websites", function (error, results, fields) {
+  connection.query("SELECT * FROM projects", function (error, results, fields) {
     console.log("Checked if exists: ");
     console.log(results.length);
 
@@ -61,31 +61,30 @@ function readFromDatabase(res, projectType = "both") {
   });
 
   //Read in general paragraph data
-  connection.query("SELECT * FROM paragraphs", function (
-    error,
-    results,
-    fields
-  ) {
-    console.log("Checked if exists: ");
-    console.log(results.length);
+  connection.query(
+    "SELECT * FROM paragraphs",
+    function (error, results, fields) {
+      console.log("Checked if exists: ");
+      console.log(results.length);
 
-    if (results.length > 0) {
-      data.paragraphData = results;
+      if (results.length > 0) {
+        data.paragraphData = results;
 
-      modifyParagraphData(data);
-      splitSkillString(data);
+        modifyParagraphData(data);
+        splitSkillString(data);
 
-      gotFromParagraphs = true;
+        gotFromParagraphs = true;
+      }
+
+      checkIfGotAllData(
+        gotFromParagraphs,
+        gotFromWebsites,
+        data,
+        res,
+        connection
+      );
     }
-
-    checkIfGotAllData(
-      gotFromParagraphs,
-      gotFromWebsites,
-      data,
-      res,
-      connection
-    );
-  });
+  );
 }
 
 //Render index if both table connections were successful
@@ -141,6 +140,8 @@ function splitSkillString(data) {
     console.log(element);
   });
   data.paragraphData[0].webDevSkills = skillArray;
+
+  console.log(skillArray);
 
   //Make a GameDev skill string
   splitArray = data.paragraphData[0].gameDevSkills.split("|");

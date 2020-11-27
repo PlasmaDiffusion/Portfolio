@@ -380,7 +380,7 @@
                                 <div class="col-xl">
 
                                     <img src={{frameworkImage_string}}
-                                        style="width:64;height:64px;"
+                                        
                                         class="framework">
 
                                 </div>
