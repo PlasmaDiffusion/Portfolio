@@ -3,25 +3,13 @@ body,
   color: white;
   position: relative;
   background-color: black;
-  border-color: #1a2225; }
+  border-color: #051e27; }
 
-body {
-  color: white;
-  position: relative;
-  background-color: #02000c;
-  -webkit-background-size: 80px 80px;
-  -moz-background-size: 80px 80px;
-  background-size: 80px 80px;
-  /* Controls the size of the stripes */
-  background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(0.25, rgba(255, 255, 255, 0.025)), color-stop(0.25, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(255, 255, 255, 0.025)), color-stop(0.75, rgba(255, 255, 255, 0.025)), color-stop(0.75, transparent), to(transparent));
-  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.025) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.025) 50%, rgba(255, 255, 255, 0.025) 75%, transparent 75%, transparent);
-  background-image: -moz-linear-gradient(45deg, rgba(255, 255, 255, 0.025) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.025) 50%, rgba(255, 255, 255, 0.025) 75%, transparent 75%, transparent);
-  background-image: -ms-linear-gradient(45deg, rgba(255, 255, 255, 0.025) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.025) 50%, rgba(255, 255, 255, 0.025) 75%, transparent 75%, transparent);
-  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.025) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.025) 50%, rgba(255, 255, 255, 0.025) 75%, transparent 75%, transparent);
-  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.025) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.025) 50%, rgba(255, 255, 255, 0.025) 75%, transparent 75%, transparent); }
-
-p {
-  padding: 1%; }
+p,
+li {
+  padding: 1%;
+  padding-left: 20%;
+  padding-right: 20%; }
 
 .blue,
 i {
@@ -41,7 +29,7 @@ a {
 
 ol,
 tr {
-  background-color: #1a2225;
+  background-color: #051e27;
   border-radius: 4px;
   color: #88898d; }
 
@@ -58,23 +46,33 @@ table {
 #Opening,
 .main,
 .jumbotron {
-  width: 60%;
   border-radius: 4px;
   /*border-bottom-left-radius: 0px;
   border-bottom-right-radius: 0px;*/
   display: block;
-  background-color: #1a2225;
+  background-color: #051e27;
   margin-left: auto;
   margin-right: auto;
   margin-top: none;
   margin-left: none;
   padding: 0; }
 
+#Opening {
+  background-color: black; }
+
+.display-4 {
+  background-color: black; }
+
 .row {
-  background-color: #1a2225;
-  width: 150%;
+  background-color: #051e27;
   border-radius: 4px;
   padding-top: 16px; }
+
+.container-fluid {
+  padding: 0; }
+
+.list-group-item {
+  text-align: center; }
 
 .list-group-item:first-child {
   border-radius: 4px;
@@ -92,6 +90,13 @@ h2 {
   text-align: center;
   background: #002736;
   font-size: 30px; }
+
+.projectHeading {
+  padding: 1px;
+  padding-bottom: 10px;
+  padding-top: 0px;
+  margin-bottom: none;
+  width: 100%; }
 
 .changePreview {
   width: 32px;
@@ -136,7 +141,7 @@ h2 {
   height: 0;
   border-top: 32px solid #002736;
   border-bottom: 32px solid #002736;
-  border-left: 32px solid #1a2225; }
+  border-left: 32px solid #051e27; }
 
 .prevPreview {
   border-top-left-radius: 2px;
@@ -235,6 +240,10 @@ img {
   opacity: 0%;
   transition: opacity 0.5s; }
 
+.btn {
+  width: 100% !important;
+  left: 55% !important; }
+
 .divider .btn:hover,
 .bigBtn:hover {
   background-color: black;
@@ -243,8 +252,8 @@ img {
   transition: opacity 0.5s; }
 
 .bigBtn {
-  left: 109%;
-  width: 200%; }
+  left: 102.5%;
+  width: 195%; }
 
 /* Scrollbar ----------------------------------------------------------------------------------*/
 /* width */
@@ -253,7 +262,7 @@ img {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #1a2225; }
+  background: #051e27; }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
@@ -263,7 +272,7 @@ img {
 ::-webkit-scrollbar-thumb:hover {
   background: #526eb8; }
 
-/* ---------------------------------------------------------------------------------------------------------------------------------- */
+/* Smaller screens ---------------------------------------------------------------------------------------------------------------------------------- */
 @media (max-width: 980px) {
   #websites,
   #games,
@@ -271,9 +280,7 @@ img {
   .main,
   .jumbotron {
     width: 100%;
-    font-size: 2rem;
-    margin-left: 0;
-    margin-right: 0; }
+    font-size: 2rem; }
 
   h2 {
     font-size: 3rem; }
@@ -281,6 +288,12 @@ img {
   .lead,
   .col-lg {
     font-size: 2rem; }
+
+  .col-sm-3 {
+    max-width: 100%; }
+
+  .btn {
+    width: 512px; }
 
   a,
   h2 a,
@@ -294,9 +307,6 @@ img {
   .changePreviewSelected,
   .changePreview:hover {
     width: 64px;
-    height: 32px; }
-
-  .row {
-    width: 200%; } }
+    height: 32px; } }
 
 /*# sourceMappingURL=style.css.map */

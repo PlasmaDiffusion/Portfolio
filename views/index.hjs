@@ -19,7 +19,7 @@
     </head>
 
     <body>
-        <div class="container">
+        <div class="container-fluid">
 
             <div id="Opening" class="jumbotron">
 
@@ -81,7 +81,7 @@
                         {{/isGame}}
                         {{^isGame}}
                         {{#big}}
-                        <div class="col-sm-5">
+                        <div class="col-sm-3">
 
                             <div class="divider">
                                 <img src={{image0_string}} class="bigImg"
@@ -96,9 +96,12 @@
                 </div>
                 <br>
 
-                <table>
+                <div class="row d-flex justify-content-center" style="width:
+                        100%">
 
-                    <tr>
+                           <div class="col-sm-1"> </div>
+
+
 
                         {{#websiteData}}
                         {{#isGame}}
@@ -107,19 +110,19 @@
                         {{#big}}
                         {{/big}}
                         {{^big}}
-                        <td>
-                            <div class="divider">
-                                <img src={{image0_string}} style="width: 128px;
-                                    height: 128px; display: block;">
-                                <button class="btn" value={{id}}>{{name}}</button>
-                            </div>
-                        </td>
+                                <div class="col-sm-2">
+                                    <div class="divider">
+                                    <img src={{image0_string}} style="width: 128px;
+                                        height: 128px; display: block;">
+                                    <button class="btn" value={{id}}>{{name}}</button>
+                                    </div>
+                                </div>
+
                         {{/big}}
                         {{/isGame}}
                         {{/websiteData}}
-                    </tr>
 
-                </table>
+                </div>
             </div>
 
             <!-- Website Skills -->
@@ -179,7 +182,7 @@
                             {{#websiteData}}
                             {{#isGame}}
                             {{#big}}
-                            <div class="col-sm-5">
+                            <div class="col-sm-3">
 
                                 <div class="divider">
                                     <img src={{image0_string}} style="width:
@@ -198,28 +201,27 @@
                     </div>
                     <br>
 
-                    <table>
 
-                        <tr>
+                        <div class="row d-flex justify-content-center"
+                            style="width: 100%">
 
                             {{#websiteData}}
                             {{#isGame}}
                             {{#big}}
                             {{/big}}
                             {{^big}}
-                            <td>
+                            <div class="col-sm-2">
                                 <div class="divider">
                                     <img src={{image0_string}} style="width:
                                         128px; height: 128px; display: block;">
                                     <button class="btn" value={{id}}>{{name}}</button>
                                 </div>
-                            </td>
+                            </div>
                             {{/big}}
                             {{/isGame}}
                             {{/websiteData}}
-                        </tr>
+                        </div>
 
-                    </table>
                 </div>
 
                 <!--Game Dev Skills -->
@@ -259,15 +261,17 @@
                     <div class="divider" style="margin-left: 10%; margin-right:
                         50%;">
 
-                        <h2 style="padding: 1px; padding-bottom: 10px;
-                            margin-bottom:none; width:141.5%;">{{name}}
-                            <button class="close" value={{id}}>X</button>
-                        </h2>
                         <div class="container">
 
                             <div class="row"
                                 style="border-bottom-left-radius: 0;
                                 border-bottom-right-radius: 0;">
+
+                                <h2 style="padding: 1px; padding-bottom: 10px; padding-top:0px;
+                                margin-bottom:none; width:100%;">{{name}}
+                                <button class="close" value={{id}}>X</button>
+                                </h2>
+
 
                                 <div class="col-lg">
                                     <div class="container">
