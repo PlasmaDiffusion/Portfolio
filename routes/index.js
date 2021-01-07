@@ -18,15 +18,15 @@ router.get("/:projectType", (req, res, next) => {
 
 module.exports = router;
 
-function readFromDatabase(res, projectType = "both") {
+function readFromDatabase(res, projectType = "websites") {
   var data = {};
 
   //Set data flags for showing each project type
-  if (projectType == "both" || projectType == "games")
+  if (projectType == "all" || projectType == "games")
     data.gameProjectsEnabled = true;
-  if (projectType == "both" || projectType == "websites")
+  if (projectType == "all" || projectType == "websites")
     data.websiteProjectsEnabled = true;
-  if (projectType == "both") data.bothProjectTypesEnabled = true;
+  if (projectType == "all") data.bothProjectTypesEnabled = true;
 
   //Connection to database
   var connection = mysql.createPool({

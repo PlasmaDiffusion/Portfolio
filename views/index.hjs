@@ -258,8 +258,7 @@
 
 
                     <!--Show row of images, videos and a description at the end. !-->
-                    <div class="divider" style="margin-left: 10%; margin-right:
-                        50%;">
+                    <div class="project">
 
                         <div class="container">
 
@@ -267,7 +266,7 @@
                                 style="border-bottom-left-radius: 0;
                                 border-bottom-right-radius: 0;">
 
-                                <h2 style="padding: 1px; padding-bottom: 10px; padding-top:0px;
+                                <h2 style="padding: 1px; padding-top:0px;
                                 margin-bottom:none; width:100%;">{{name}}
                                 <button class="close" value={{id}}>X</button>
                                 </h2>
@@ -355,12 +354,14 @@
                                             {{#url}}
                                             <br>
                                             <br>
-                                            <a href={{url}} class="siteLink"
-                                                target="_blank"> Try it out!</a>
+                                            <a href={{url}} class="siteLink" style="padding-right:20%;"
+                                                target="_blank"> Visit Site</a>
+                                            <br>
+                                            <br>
                                             {{/url}}
                                             {{#repoLink}}
                                             <a href={{repoLink}}
-                                                class="repoLink"
+                                                class="repoLink" style="padding-right:5%;"
                                                 target="_blank"> Source Code
                                             </a>
                                             {{/repoLink}}

@@ -53,18 +53,6 @@ tr {
   color: rgb(136, 137, 141);
 }
 
-table {
-  //max-width: 200%;
-  border-radius: 4px;
-  //width:150%;
-  display: block;
-  color: $titleColour;
-  padding: 10px;
-  padding-top: 0px;
-  //padding-right: 50%;
-  overflow-x: auto;
-}
-
 //Main panels
 #websites,
 #games,
@@ -93,7 +81,9 @@ table {
 .row {
   background-color: $blockColour;
   border-radius: 4px;
-  padding-top: 16px;
+  padding-top: 1px;
+  //Size of project
+  //width: 200%;
 }
 
 .container-fluid {
@@ -194,7 +184,7 @@ h2 {
 //Buttons to other sites or closing -----------------------
 .repoLink,
 .siteLink {
-  background-color: $outlineCol;
+  background-color: $headCol;
   text-decoration: none;
   margin: 5px;
   padding: 5px;
@@ -203,7 +193,7 @@ h2 {
 
 .repoLink:hover,
 .siteLink:hover {
-  background-color: $headCol;
+  background-color: darken($outlineCol, 20%);
   text-decoration: none;
 }
 
@@ -264,9 +254,15 @@ img {
 }
 
 /* divider needed to position the button. Adjust the width as needed */
-.divider {
+.divider,
+.project {
   position: relative;
   width: 50%;
+}
+
+.project {
+  margin-left: 25%;
+  //transition: opacity 0.5s;
 }
 
 /* Make the image responsive */
@@ -355,9 +351,10 @@ img {
     font-size: 3rem;
   }
 
+  //Font size for main fonts
   .lead,
   .col-lg {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
 
   .col-sm-3 {
@@ -368,12 +365,14 @@ img {
     width: 512px;
   }
 
+  //Links and close
   a,
   h2 a,
   .close {
     font-size: 3rem;
   }
 
+  //Buttons for image previews
   .changePreview {
     width: 64px;
     height: 16px;
@@ -383,5 +382,14 @@ img {
   .changePreview:hover {
     width: 64px;
     height: 32px;
+  }
+
+  //Size of a project window
+  .row {
+    width: 180%;
+  }
+
+  .project {
+    margin-left: 7.5%;
   }
 }

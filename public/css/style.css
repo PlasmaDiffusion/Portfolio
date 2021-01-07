@@ -33,14 +33,6 @@ tr {
   border-radius: 4px;
   color: #88898d; }
 
-table {
-  border-radius: 4px;
-  display: block;
-  color: #526eb8;
-  padding: 10px;
-  padding-top: 0px;
-  overflow-x: auto; }
-
 #websites,
 #games,
 #Opening,
@@ -66,7 +58,7 @@ table {
 .row {
   background-color: #051e27;
   border-radius: 4px;
-  padding-top: 16px; }
+  padding-top: 1px; }
 
 .container-fluid {
   padding: 0; }
@@ -152,7 +144,7 @@ h2 {
 
 .repoLink,
 .siteLink {
-  background-color: #004b69;
+  background-color: #002736;
   text-decoration: none;
   margin: 5px;
   padding: 5px;
@@ -160,7 +152,7 @@ h2 {
 
 .repoLink:hover,
 .siteLink:hover {
-  background-color: #002736;
+  background-color: #000203;
   text-decoration: none; }
 
 .close,
@@ -207,9 +199,13 @@ img {
   display: inline-block; }
 
 /* divider needed to position the button. Adjust the width as needed */
-.divider {
+.divider,
+.project {
   position: relative;
   width: 50%; }
+
+.project {
+  margin-left: 25%; }
 
 /* Make the image responsive */
 .previewImage {
@@ -287,7 +283,7 @@ img {
 
   .lead,
   .col-lg {
-    font-size: 2rem; }
+    font-size: 2.5rem; }
 
   .col-sm-3 {
     max-width: 100%; }
@@ -307,6 +303,12 @@ img {
   .changePreviewSelected,
   .changePreview:hover {
     width: 64px;
-    height: 32px; } }
+    height: 32px; }
+
+  .row {
+    width: 180%; }
+
+  .project {
+    margin-left: 7.5%; } }
 
 /*# sourceMappingURL=style.css.map */
