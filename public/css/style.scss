@@ -241,7 +241,7 @@ img {
 //Link at bottom linking to email
 #contactMe {
   text-align: center;
-  font-size: 24px;
+  font-size: 2rem;
   display: block;
 }
 
@@ -251,6 +251,10 @@ img {
   background: none;
   height: 200px;
   display: inline-block;
+}
+
+.smallSpace {
+  padding-bottom: 64px;
 }
 
 /* divider needed to position the button. Adjust the width as needed */
@@ -281,9 +285,7 @@ img {
 .bigBtn {
   position: absolute;
   top: 50%;
-  left: 100%;
-  width: 150%;
-  height: 80%;
+  height: 98%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   background-color: #555;
@@ -298,8 +300,8 @@ img {
 }
 
 .btn {
-  width: 100% !important;
-  left: 55% !important;
+  width: 110%;
+  left: 57%;
 }
 
 .divider .btn:hover,
@@ -311,8 +313,8 @@ img {
 }
 
 .bigBtn {
-  left: 102.5%;
-  width: 195%;
+  left: 103.5%;
+  width: 200%;
 }
 
 /* Scrollbar ----------------------------------------------------------------------------------*/
@@ -361,8 +363,18 @@ img {
     max-width: 100%;
   }
 
+  .bigBtn {
+    font-size: 2rem;
+  }
+
+  .divider .btn {
+    font-size: 1.5rem;
+    height: 100%;
+  }
+
   .btn {
-    width: 512px;
+    width: 200%;
+    left: 95%;
   }
 
   //Links and close
@@ -384,6 +396,12 @@ img {
     height: 32px;
   }
 
+  //Link buttons
+  .siteLink,
+  .repoLink {
+    text-align: center;
+  }
+
   //Size of a project window
   .row {
     width: 180%;
@@ -391,5 +409,19 @@ img {
 
   .project {
     margin-left: 7.5%;
+  }
+
+  //Bottom framework images
+  .col-sm-1 {
+    max-width: none;
+  }
+
+  .smallSpace {
+    padding-bottom: 128px;
+  }
+
+  //Email
+  #contactMe {
+    font-size: 3rem;
   }
 }

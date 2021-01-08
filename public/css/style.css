@@ -189,7 +189,7 @@ img {
 
 #contactMe {
   text-align: center;
-  font-size: 24px;
+  font-size: 2rem;
   display: block; }
 
 .BigSpace {
@@ -197,6 +197,9 @@ img {
   background: none;
   height: 200px;
   display: inline-block; }
+
+.smallSpace {
+  padding-bottom: 64px; }
 
 /* divider needed to position the button. Adjust the width as needed */
 .divider,
@@ -221,9 +224,7 @@ img {
 .bigBtn {
   position: absolute;
   top: 50%;
-  left: 100%;
-  width: 150%;
-  height: 80%;
+  height: 98%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   background-color: #555;
@@ -237,8 +238,8 @@ img {
   transition: opacity 0.5s; }
 
 .btn {
-  width: 100% !important;
-  left: 55% !important; }
+  width: 110%;
+  left: 57%; }
 
 .divider .btn:hover,
 .bigBtn:hover {
@@ -248,8 +249,8 @@ img {
   transition: opacity 0.5s; }
 
 .bigBtn {
-  left: 102.5%;
-  width: 195%; }
+  left: 103.5%;
+  width: 200%; }
 
 /* Scrollbar ----------------------------------------------------------------------------------*/
 /* width */
@@ -288,8 +289,16 @@ img {
   .col-sm-3 {
     max-width: 100%; }
 
+  .bigBtn {
+    font-size: 2rem; }
+
+  .divider .btn {
+    font-size: 1.5rem;
+    height: 100%; }
+
   .btn {
-    width: 512px; }
+    width: 200%;
+    left: 95%; }
 
   a,
   h2 a,
@@ -305,10 +314,23 @@ img {
     width: 64px;
     height: 32px; }
 
+  .siteLink,
+  .repoLink {
+    text-align: center; }
+
   .row {
     width: 180%; }
 
   .project {
-    margin-left: 7.5%; } }
+    margin-left: 7.5%; }
+
+  .col-sm-1 {
+    max-width: none; }
+
+  .smallSpace {
+    padding-bottom: 128px; }
+
+  #contactMe {
+    font-size: 3rem; } }
 
 /*# sourceMappingURL=style.css.map */

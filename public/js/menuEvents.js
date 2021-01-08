@@ -47,8 +47,8 @@ document.addEventListener("DOMContentLoaded", () => {
       };
 
       //Make the text smaller if the words are too big
-      let buttonName = button.innerHTML.split(" ");
-      if (buttonName[0].length > 8) button.style.fontSize = 12;
+      //let buttonName = button.innerHTML.split(" ");
+      //if (buttonName[0].length > 8) button.style.fontSize = 12;
     }
 
     //Click close button to get rid of information

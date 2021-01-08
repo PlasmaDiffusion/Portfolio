@@ -123,8 +123,9 @@
                         {{/websiteData}}
 
                 </div>
-            </div>
+                            <div style="padding-bottom: 64px;"></div>
 
+            </div>
             <!-- Website Skills -->
             <div id="webDevSkills" class="main">
                 {{#paragraphData}}
@@ -350,7 +351,7 @@
                                         </div>
 
                                         <!--Link to website and/or repository -->
-                                        <div class="col-lg">
+                                        <div class="col-lg" style="text-align:center;">
                                             {{#url}}
                                             <br>
                                             <br>
@@ -369,6 +370,8 @@
                                         </div>
                                     </div>
 
+                                    <div class="smallSpace"></div>
+
 
                                 </div>
                             </div>
@@ -382,7 +385,16 @@
                                 </div>
 
                                 <!-- Framework icon -->
-                                <div class="col-xl">
+                                {{#frameworkImage1_string}}
+                                <div class="col-sm-1">
+
+                                    <img src={{frameworkImage1_string}}
+                                        
+                                        class="framework">
+
+                                </div>
+                                {{/frameworkImage1_string}}
+                                <div class="col-sm-2">
 
                                     <img src={{frameworkImage_string}}
                                         
@@ -417,7 +429,7 @@
             <br>
             <a id="contactMe"
                 href="https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1&source=mailto&su=&to=ScottCooperDeveloper@gmail.com"
-                style="content-align: center; font-size:24pt;">
+                style="content-align: center;">
                 <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi
                     bi-envelope-fill" fill="currentColor"
                     xmlns="http://www.w3.org/2000/svg">
@@ -429,6 +441,7 @@
                         9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803
                         3.546z" />
                     </svg> Contact Me</a>
+            <div style="padding-bottom: 32px;"></div>
             </body>
 
         </html>
