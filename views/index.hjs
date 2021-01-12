@@ -11,10 +11,6 @@
         <link rel="stylesheet" type="text/css" href="/css/style.css">
         <script type="module" src="js/menuEvents.js"></script>
         <script
-            src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script
-            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-        <script
             src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     </head>
 
@@ -126,28 +122,35 @@
                             <div style="padding-bottom: 64px;"></div>
 
             </div>
-            <!-- Website Skills -->
-            <div id="webDevSkills" class="main">
-                {{#paragraphData}}
-                <ul class="list-group">
-                    <li class="list-group-item list-group-item-dark
-                        list-group-item-action colour blue"
-                        data-toggle="collapse"
-                        data-target="#webDevSkillList"><b>Web
-                            Developer Skills</b></li>
-                    {{#webDevSkills}}
-                    <div id="webDevSkillList" class="collapse">
-
-                        <li class="list-group-item
-                            list-group-item-dark
-                            colour">{{{name}}}</li>
-                    </div>
-
-                    {{/webDevSkills}}
-                </ul>
-                {{/paragraphData}}
-
+                        <div class="BigSpace">
             </div>
+            <!-- Website Skills -->
+            <div class="container" id="webDevSkills">
+                <div class ="row" style="width: 100%; background: none;">
+                        <div class ="col-sm">
+                            
+                            <h2 class="display-4">Web Developer Skills </h2>
+                        </div>
+                        <div class ="col-lg">
+                                {{#paragraphData}}
+                                <ul class="list-group">
+                                    {{#webDevSkills}}
+                                    
+                                        <li class="list-group-item
+                                            list-group-item-dark
+                                            colour">{{{name}}}</li>
+
+
+                                    {{/webDevSkills}}
+                                </ul>
+                                {{/paragraphData}}
+
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+
 
             <br>
 
@@ -225,27 +228,32 @@
 
                 </div>
 
-                <!--Game Dev Skills -->
-                <div id="gameDevSkills" class="main">
-                    {{#paragraphData}}
-                    <ul class="list-group">
-                        <li class="list-group-item list-group-item-dark
-                            list-group-item-action colour blue"
-                            data-toggle="collapse"
-                            data-target="#gameDevSkillList"><b>Game
-                                Programmer Skills</b></li>
-                        {{#gameDevSkills}}
-                        <div id="gameDevSkillList" class="collapse">
+            <div class="BigSpace"></div>
 
-                            <li class="list-group-item
-                                list-group-item-dark
-                                colour">{{{name}}}</li>
+            <!--Game Dev Skills -->
+            <div class="container" id="gameDevSkills">
+                <div class ="row" style="width: 100%; background: none;">
+                        <div class ="col-sm">
+                            
+                            <h2 class="display-4">Game Programmer Skills </h2>
                         </div>
+                        <div class ="col-lg">
+                                {{#paragraphData}}
+                                <ul class="list-group">
+                                    {{#gameDevSkills}}
+                                    
+                                        <li class="list-group-item
+                                            list-group-item-dark
+                                            colour">{{{name}}}</li>
 
-                        {{/gameDevSkills}}
-                    </ul>
-                    {{/paragraphData}}
 
+                                    {{/gameDevSkills}}
+                                </ul>
+                                {{/paragraphData}}
+
+                        </div>
+                        
+                    </div>
                 </div>
 
                 {{/gameProjectsEnabled}}

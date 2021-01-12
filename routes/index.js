@@ -30,8 +30,8 @@ function readFromDatabase(res, projectType = "websites") {
 
   //Connection to database
   var connection = mysql.createPool({
-    host: "sql9.freemysqlhosting.net",
-    user: process.env.DATABASE,
+    host: "portfolio.c0i3n83nezil.us-east-2.rds.amazonaws.com",
+    user: "admin",
     password: process.env.DB_PASS,
     database: process.env.DATABASE,
   });

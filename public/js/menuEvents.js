@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
         ChangeElementDisplay("Opening", "none");
         ChangeElementDisplay("webDevSkills", "none");
         ChangeElementDisplay("gameDevSkills", "none");
+        ChangeElementDisplay("contactMe", "none");
 
         var spaces = document.getElementsByClassName("BigSpace");
         [].forEach.call(spaces, function (spaces) {
@@ -60,6 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
         ChangeElementDisplay("Opening", "block");
         ChangeElementDisplay("webDevSkills", "block");
         ChangeElementDisplay("gameDevSkills", "block");
+        ChangeElementDisplay("contactMe", "block");
 
         var spaces = document.getElementsByClassName("BigSpace");
         [].forEach.call(spaces, function (spaces) {
