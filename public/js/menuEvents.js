@@ -34,16 +34,14 @@ document.addEventListener("DOMContentLoaded", () => {
         //Save what the last menu was
         if (button.className == "btn")
           lastMenu =
-            "#" +
-            button.parentNode.parentNode.parentNode.parentNode.parentNode
-              .parentNode.id;
+            "#" + button.parentNode.parentNode.parentNode.parentNode.id;
 
         if (button.className == "bigBtn")
           lastMenu =
             "#" +
             button.parentNode.parentNode.parentNode.parentNode.parentNode.id;
 
-        //Move to top of screen to see the whole thing
+        //Move to top of screen to see the whole thing (No longer needed unless project descriptions are long)
         window.location.href = "#top";
       };
 

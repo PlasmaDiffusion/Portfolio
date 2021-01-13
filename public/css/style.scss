@@ -107,7 +107,7 @@ tr {
 
 /* Header/Logo Title */
 h2 {
-  padding: 60px;
+  padding: 20px;
   text-align: center;
   background: $headCol;
   font-size: 30px;
@@ -188,6 +188,16 @@ h2 {
   margin: 5px;
   padding: 5px;
   border-radius: 4px;
+  text-align: center;
+}
+
+.repoLink {
+  padding-right: 18%;
+  text-align: center;
+}
+.siteLink {
+  padding-right: 20%;
+  text-align: center;
 }
 
 .repoLink:hover,
@@ -229,8 +239,7 @@ img {
 }
 
 .framework {
-  float: right;
-  padding: none;
+  padding: 32px;
   border: none;
   background-color: transparent;
   width: 128px;
@@ -406,6 +415,11 @@ img {
   //Size of a project window
   .row {
     width: 180%;
+  }
+
+  .framework {
+    width: 256px;
+    height: 256px;
   }
 
   .project {

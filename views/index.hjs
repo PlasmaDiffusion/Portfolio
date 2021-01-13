@@ -10,8 +10,6 @@
             href="/css/bootstrap/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="/css/style.css">
         <script type="module" src="js/menuEvents.js"></script>
-        <script
-            src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     </head>
 
     <body>
@@ -20,7 +18,7 @@
             <div id="Opening" class="jumbotron">
 
                 <h2 style="border-top-left-radius: 0;
-                    border-top-right-radius: 0;" class="display-4">Scott Cooper
+                    border-top-right-radius: 0; padding: 60px;" class="display-4">Scott Cooper
                     <br>
                     {{#paragraphData}}
                     <!-- Web dev title -->
@@ -60,10 +58,10 @@
             <!-- Website Menu -->
 
 
-            <div id="websites">
+            <div id="websites" style="border-radius: 0px;">
 
 
-                <h2>Website Projects</h2>
+                <h2 style="border-radius: 0px;">Website Projects</h2>
                 {{#paragraphData}}
                 <p style="text-align: center;" class="lead">{{webDevParagraph}}</p>
                 {{/paragraphData}}
@@ -80,8 +78,16 @@
                         <div class="col-sm-3">
 
                             <div class="divider">
+                                <!-- Show either thumbnail image or first regular image -->
+                                {{#thumbnail_string}}
+                                <img src={{thumbnail_string}} class="bigImg"
+                                    style="display: block;">
+                                {{/thumbnail_string}}
+                                {{^thumbnail_string}}
                                 <img src={{image0_string}} class="bigImg"
                                     style="display: block;">
+                                {{/thumbnail_string}}
+
                                 <button class="bigBtn" value={{id}}>{{name}}</button>
                             </div>
                         </div>
@@ -108,8 +114,15 @@
                         {{^big}}
                                 <div class="col-sm-2">
                                     <div class="divider">
-                                    <img src={{image0_string}} style="width: 128px;
-                                        height: 128px; display: block;">
+                                                                    {{#thumbnail_string}}
+                                <img src={{thumbnail_string}}
+                                    style="display: block;">
+                                {{/thumbnail_string}}
+                                {{^thumbnail_string}}
+                                <img src={{image0_string}}
+                                    style="display: block;">
+                                {{/thumbnail_string}}
+                                
                                     <button class="btn" value={{id}}>{{name}}</button>
                                     </div>
                                 </div>
@@ -189,9 +202,14 @@
                             <div class="col-sm-3">
 
                                 <div class="divider">
-                                    <img src={{image0_string}} style="width:
-                                        256px;
-                                        height: 256px; display: block;">
+                                        {{#thumbnail_string}}
+                                        <img src={{thumbnail_string}} class="bigImg"
+                                            style="display: block;">
+                                        {{/thumbnail_string}}
+                                        {{^thumbnail_string}}
+                                        <img src={{image0_string}} class="bigImg"
+                                            style="display: block;">
+                                        {{/thumbnail_string}}
                                     <button class="bigBtn" value={{id}}>{{name}}</button>
                                 </div>
                             </div>
@@ -216,8 +234,14 @@
                             {{^big}}
                             <div class="col-sm-2">
                                 <div class="divider">
-                                    <img src={{image0_string}} style="width:
-                                        128px; height: 128px; display: block;">
+                                        {{#thumbnail_string}}
+                                        <img src={{thumbnail_string}} class="bigImg"
+                                            style="display: block;">
+                                        {{/thumbnail_string}}
+                                        {{^thumbnail_string}}
+                                        <img src={{image0_string}} class="bigImg"
+                                            style="display: block;">
+                                        {{/thumbnail_string}}
                                     <button class="btn" value={{id}}>{{name}}</button>
                                 </div>
                             </div>
@@ -357,28 +381,8 @@
                                             <br>
                                             <br>
                                         </div>
-
-                                        <!--Link to website and/or repository -->
-                                        <div class="col-lg" style="text-align:center;">
-                                            {{#url}}
-                                            <br>
-                                            <br>
-                                            <a href={{url}} class="siteLink" style="padding-right:20%;"
-                                                target="_blank"> Visit Site</a>
-                                            <br>
-                                            <br>
-                                            {{/url}}
-                                            {{#repoLink}}
-                                            <a href={{repoLink}}
-                                                class="repoLink" style="padding-right:5%;"
-                                                target="_blank"> Source Code
-                                            </a>
-                                            {{/repoLink}}
-                                            <br>
-                                        </div>
                                     </div>
 
-                                    <div class="smallSpace"></div>
 
 
                                 </div>
@@ -386,28 +390,51 @@
                             <div class="row" style="border-top-left-radius: 0;
                                 border-top-right-radius: 0;">
 
-                                <!-- Optional links go below -->
-                                <div class="col-lg">
 
-
-                                </div>
-
-                                <!-- Framework icon -->
-                                {{#frameworkImage1_string}}
-                                <div class="col-sm-1">
-
-                                    <img src={{frameworkImage1_string}}
-                                        
-                                        class="framework">
-
-                                </div>
-                                {{/frameworkImage1_string}}
+                                <!-- Framework icons -->
+                                 
                                 <div class="col-sm-2">
 
                                     <img src={{frameworkImage_string}}
                                         
                                         class="framework">
 
+                                </div>
+
+                                
+                                <div class="col-sm-1"></div>
+
+
+                                <div class="col-sm-2">
+                                    {{#frameworkImage1_string}}
+
+                                    <img src={{frameworkImage1_string}}
+                                        
+                                        class="framework">
+                                    {{/frameworkImage1_string}}
+
+                                </div>
+
+                                <!--Link to website and/or repository -->
+                                <div class="col-lg" style="text-align:center;">
+                                    {{#url}}
+                                    <br>
+                                    <br>
+                                    <a href={{url}} class="siteLink"
+                                        target="_blank"> Visit Site</a>
+                                    <br>
+                                    <br>
+                                    {{/url}}
+                                    {{#repoLink}}
+                                    <a href={{repoLink}}
+                                        class="repoLink"
+                                        target="_blank"> GitHub <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+
+                                    </a>
+                                    {{/repoLink}}
+                                    <br>
+                                    <br>
                                 </div>
 
                             </div>
@@ -432,9 +459,6 @@
             </div>
             {{/gameProjectsEnabled}}
 
-            <br>
-            <br>
-            <br>
             <a id="contactMe"
                 href="https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1&source=mailto&su=&to=ScottCooperDeveloper@gmail.com"
                 style="content-align: center;">
