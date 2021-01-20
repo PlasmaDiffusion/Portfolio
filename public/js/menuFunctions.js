@@ -5,7 +5,12 @@ export function ChangeElementDisplay(id, display) {
   if (webElement) webElement.style.display = display;
 }
 
-//When a preview button is clicked, find the html elements that have said preview data.
+export function ChangeClassDisplay(className, display) {
+  var elements = document.getElementsByClassName(className);
+  for (let i = 0; i < elements.length; i++) elements[i].style.display = display;
+}
+
+//When a preview button is clicked (for images or videos), find the html elements that have said preview data.
 export function ChangePreviewImage(button) {
   //Now find the hidden <p>s that contain image or video data
   let parentDiv =
@@ -86,18 +91,28 @@ export function CheckIfVideoOrImage(buttonIndex, imageSrcs) {
   }
 }
 
-//Next/prev preview arrows call this
-export function GetValueOfSelectedButton(document, button, offset) {
-  var previewButtons = button.parentNode.children[1].children;
-  console.log(previewButtons);
+//Toggle arrow visiblity (called when preview image is hovered)
+export function MakeArrowsVisible(image) {
+  image.parentNode.children[0].style.opacity = 0.5;
+  image.parentNode.children[1].style.opacity = 0.5;
+}
+export function MakeArrowsInvisible(image) {
+  image.parentNode.children[0].style.opacity = 0;
+  image.parentNode.children[1].style.opacity = 0;
+}
+
+//Next/prev preview arrows call this. It moves to the next image by "clicking" the preview button for it.
+export function GetValueOfSelectedButton(button, offset) {
+  var previewButtons =
+    button.parentNode.parentNode.parentNode.children[3].children;
+
+  previewButtons = previewButtons[0].children;
   var totalUsedButons = 0;
 
   //Find how many preview buttons are USED (can be up to 4)
   for (let i = 0; i < previewButtons.length; i++) {
     if (previewButtons[i].className != "changePreviewEmpty") totalUsedButons++;
   }
-
-  console.log(totalUsedButons);
 
   //Find the button that's selected
   for (let i = 0; i < previewButtons.length; i++) {

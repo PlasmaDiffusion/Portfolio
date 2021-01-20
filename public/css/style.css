@@ -32,6 +32,12 @@ h2 a {
 a {
   font-size: 1.5rem; }
 
+a:hover {
+  text-decoration: none; }
+
+#contactMe a {
+  padding: 2rem; }
+
 ol,
 tr {
   background-color: #051e27;
@@ -107,9 +113,7 @@ h2 {
   fill-opacity: 50%;
   border: 2px solid black; }
 
-.changePreviewSelected,
-.nextPreview,
-.prevPreview {
+.changePreviewSelected {
   width: 32px;
   height: 16px;
   transition-duration: 0.3s;
@@ -120,20 +124,21 @@ h2 {
 
 .nextPreview,
 .prevPreview {
-  background-color: #004b69;
-  color: #007bff;
-  border: none; }
+  width: 30%;
+  height: 100%;
+  background-color: #707172;
+  color: black;
+  opacity: 50%;
+  border: none;
+  position: absolute;
+  text-align: center; }
 
 .nextPreview:hover,
 .prevPreview:hover {
-  background-color: #002736; }
+  background-color: #333333; }
 
 .nextPreview {
-  width: 0;
-  height: 0;
-  border-top: 32px solid #002736;
-  border-bottom: 32px solid #002736;
-  border-left: 32px solid #051e27; }
+  left: 170%; }
 
 .prevPreview {
   border-top-left-radius: 2px;
@@ -189,6 +194,10 @@ img {
   width: 256px;
   height: 256px; }
 
+.arrow {
+  position: absolute;
+  float: right; }
+
 .framework {
   padding: 32px;
   border: none;
@@ -224,9 +233,8 @@ img {
   width: 200%;
   height: auto; }
 
-/*html
-{
-	scroll-behavior: smooth; //Unused janky smooth scrollbar
+/*html {
+  scroll-behavior: smooth; //Unused janky smooth scrollbar
 }*/
 /* Style the button and place it in the middle of the divider/image */
 .divider .btn,

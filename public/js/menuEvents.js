@@ -3,16 +3,19 @@ import {
   CheckIfVideoOrImage,
   GetValueOfSelectedButton,
   ChangeElementDisplay,
+  ChangeClassDisplay,
+  MakeArrowsInvisible,
+  MakeArrowsVisible,
 } from "./menuFunctions.js";
 
-//Button click events ---------------------------------------------------------------------------------------------
-
 document.addEventListener("DOMContentLoaded", () => {
+  //Button click events ---------------------------------------------------------------------------------------------
+
   var lastMenu = "#websites";
 
   //Find all buttons
   document.querySelectorAll("button").forEach((button) => {
-    //Click a button to show information of a website/game.
+    //Click a button to show information of a project.
     if (button.className == "btn" || button.className == "bigBtn") {
       button.onclick = () => {
         ChangeElementDisplay(button.value, "block");
@@ -22,11 +25,8 @@ document.addEventListener("DOMContentLoaded", () => {
         ChangeElementDisplay("webDevSkills", "none");
         ChangeElementDisplay("gameDevSkills", "none");
         ChangeElementDisplay("contactMe", "none");
-
-        var spaces = document.getElementsByClassName("BigSpace");
-        [].forEach.call(spaces, function (spaces) {
-          spaces.style.display = "none";
-        });
+        ChangeClassDisplay("wave", "none");
+        ChangeClassDisplay("BigSpace", "none");
 
         //Put up the first preview image
         document.getElementById(button.value + "_preview").click();
@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
             button.parentNode.parentNode.parentNode.parentNode.parentNode.id;
 
         //Move to top of screen to see the whole thing (No longer needed unless project descriptions are long)
-        window.location.href = "#top";
+        //window.location.href = "#top";
       };
 
       //Make the text smaller if the words are too big
@@ -60,11 +60,8 @@ document.addEventListener("DOMContentLoaded", () => {
         ChangeElementDisplay("webDevSkills", "block");
         ChangeElementDisplay("gameDevSkills", "block");
         ChangeElementDisplay("contactMe", "block");
-
-        var spaces = document.getElementsByClassName("BigSpace");
-        [].forEach.call(spaces, function (spaces) {
-          spaces.style.display = "block";
-        });
+        ChangeClassDisplay("wave", "block");
+        ChangeClassDisplay("BigSpace", "block");
 
         //Redirect to last menu
         window.location.href = lastMenu;
@@ -75,10 +72,26 @@ document.addEventListener("DOMContentLoaded", () => {
       button.onclick = () => {
         ChangePreviewImage(button);
       };
-    } else if (button.className == "nextPreview") {
-      button.onclick = () => GetValueOfSelectedButton(document, button, 1);
+    } //Next/previous image buttons
+    else if (button.className == "nextPreview") {
+      button.onclick = () => GetValueOfSelectedButton(button, 1);
     } else if (button.className == "prevPreview") {
-      button.onclick = () => GetValueOfSelectedButton(document, button, -1);
+      button.onclick = () => GetValueOfSelectedButton(button, -1);
     }
+  });
+
+  //OnMouseOver events ---------------------------------------------------------------------------------------------
+
+  //Get all preview images, and make their arrows visible only when hovered over
+  var imgs = document.getElementsByClassName("previewImage");
+  [].forEach.call(imgs, function (image) {
+    image.parentNode.children[0].style.opacity = 0;
+    image.parentNode.children[1].style.opacity = 0;
+    image.parentNode.onmouseover = () => {
+      MakeArrowsVisible(image);
+    };
+    image.parentNode.onmouseleave = () => {
+      MakeArrowsInvisible(image);
+    };
   });
 });

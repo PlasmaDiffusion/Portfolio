@@ -2,6 +2,7 @@ const express = require("express");
 const routes = require("./routes/index");
 const path = require("path"); //Imports the path module
 const bodyParser = require("body-parser"); //Import for parsing forms
+const favicon = require("express-favicon");
 
 //Mysql stuff
 const session = require("express-session");
@@ -19,6 +20,7 @@ app.use(
 app.use(express.static(path.join(__dirname, "public")));
 app.use(bodyParser.urlencoded({ extended: true })); //False doesn't work
 app.use(bodyParser.json());
+app.use(favicon(__dirname + "/public/images/favicon.png"));
 
 //Error middleware
 app.use(function (err, req, res, next) {

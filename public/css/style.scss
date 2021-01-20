@@ -1,7 +1,7 @@
 //Main colours
-$headCol: rgb(0, 39, 54);
+$headCol: #002736;
 $outlineCol: rgb(0, 75, 105);
-$blockColour: rgb(5, 30, 39);
+$blockColour: #051e27;
 $titleColour: #526eb8;
 $bgColour: rgb(0, 0, 0);
 
@@ -50,6 +50,12 @@ h2 a {
 
 a {
   font-size: 1.5rem;
+}
+a:hover {
+  text-decoration: none;
+}
+#contactMe a {
+  padding: 2rem;
 }
 
 ol,
@@ -141,9 +147,7 @@ h2 {
   border: 2px solid black;
 }
 
-.changePreviewSelected,
-.nextPreview,
-.prevPreview {
+.changePreviewSelected {
   width: 32px;
   height: 16px;
   transition-duration: 0.3s;
@@ -154,21 +158,21 @@ h2 {
 }
 .nextPreview,
 .prevPreview {
-  background-color: $outlineCol;
-  color: rgb(0, 123, 255);
+  width: 30%;
+  height: 100%;
+  background-color: rgb(112, 113, 114);
+  color: black;
+  opacity: 50%;
   border: none;
+  position: absolute;
+  text-align: center;
 }
 .nextPreview:hover,
 .prevPreview:hover {
-  background-color: $headCol;
+  background-color: rgb(51, 51, 51);
 }
 .nextPreview {
-  width: 0;
-  height: 0;
-  border-top: 32px solid $headCol;
-  border-bottom: 32px solid $headCol;
-
-  border-left: 32px solid $blockColour;
+  left: 170%;
 }
 .prevPreview {
   border-top-left-radius: 2px;
@@ -239,6 +243,11 @@ img {
   height: 256px;
 }
 
+.arrow {
+  position: absolute;
+  float: right;
+}
+
 .framework {
   padding: 32px;
   border: none;
@@ -285,9 +294,8 @@ img {
   height: auto;
 }
 
-/*html
-{
-	scroll-behavior: smooth; //Unused janky smooth scrollbar
+/*html {
+  scroll-behavior: smooth; //Unused janky smooth scrollbar
 }*/
 
 /* Style the button and place it in the middle of the divider/image */
