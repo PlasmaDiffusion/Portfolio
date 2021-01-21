@@ -50,8 +50,10 @@
             {{#websiteProjectsEnabled}}
             <div id="websites_Scroll">
             </div>
-            <div class="BigSpace"></div>
+            <div class="bigSpace"></div>
             </div>
+            <div class="smallSpace"></div>
+
             <div class="wave" style="height: 75px; overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,49.99 C150.00,150.00 349.20,-49.99 500.00,49.99 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #002736;"></path></svg></div>
 
             <!-- Website Menu -->
@@ -60,15 +62,14 @@
             <div id="websites" style="border-radius: 0px;">
 
 
-                <h2 style="border-radius: 0px;">Website Projects</h2>
+                <h2 style="border-radius: 0px; padding-top:0px">Website Projects</h2>
                 {{#paragraphData}}
                 <p style="text-align: center;" class="lead">{{webDevParagraph}}</p>
                 {{/paragraphData}}
 
                 <!-- Big projects featured first -->
                 <div class="container">
-                    <div class="row d-flex justify-content-center" style="width:
-                        100%">
+                    <div class="row d-flex justify-content-center" style="width:100%">
                         {{#websiteData}}
                         {{#isGame}}
                         {{/isGame}}
@@ -94,13 +95,12 @@
                         {{/isGame}}
                         {{/websiteData}}
                     </div>
-                </div>
                 <br>
+                
 
-                    <div class="row d-flex justify-content-center" style="width:
-                            100%">
+                    <div class="row d-flex justify-content-center" style="width:100%">
     
-                               <div class="col-sm-1"> </div>
+    
     
     
     
@@ -111,31 +111,36 @@
                             {{#big}}
                             {{/big}}
                             {{^big}}
-                                    <div class="col-sm-2">
-                                        <div class="divider">
-                                                                        {{#thumbnail_string}}
-                                    <img src={{thumbnail_string}}
-                                        style="display: block;">
-                                    {{/thumbnail_string}}
-                                    {{^thumbnail_string}}
-                                    <img src={{image0_string}}
-                                        style="display: block;">
-                                    {{/thumbnail_string}}
-                                    
-                                        <button class="btn" value={{id}}>{{name}}</button>
-                                        </div>
-                                    </div>
+                        <div class="col-sm-3">
+
+                            <div class="divider">
+                                <!-- Show either thumbnail image or first regular image -->
+                                {{#thumbnail_string}}
+                                <img src={{thumbnail_string}} class="bigImg"
+                                    style="display: block;">
+                                {{/thumbnail_string}}
+                                {{^thumbnail_string}}
+                                <img src={{image0_string}} class="bigImg"
+                                    style="display: block;">
+                                {{/thumbnail_string}}
+
+                                <button class="bigBtn" value={{id}}>{{name}}</button>
+                            </div>
+                        </div>
     
                             {{/big}}
                             {{/isGame}}
                             {{/websiteData}}
     
                     </div>
+                </div>
+            <div class="smallSpace"></div>
+
 
             </div>
             
             <div class="wave" style="height: 150px; overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,49.99 C150.00,150.00 271.49,-49.99 500.00,49.99 L500.00,0.00 L0.00,0.00 Z" style="stroke: none; fill: #051e27;"></path></svg></div>
-            <div class="BigSpace"></div>
+            <div class="bigSpace"></div>
             </div>
 
             <!-- Website Skills -->
@@ -169,13 +174,13 @@
             <br>
 
 
-            <div class="BigSpace">
+            <div class="bigSpace">
             </div>
 
             {{/websiteProjectsEnabled}}
 
             {{#gameProjectsEnabled}}
-            <div class="BigSpace">
+            <div class="bigSpace">
             </div>
             {{/gameProjectsEnabled}}
 
@@ -254,7 +259,7 @@
                 </div>
 
             <div class="wave" style="height: 150px; overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,49.99 C150.00,150.00 271.49,-49.99 500.00,49.99 L500.00,0.00 L0.00,0.00 Z" style="stroke: none; fill: #051e27;"></path></svg></div>
-            <div class="BigSpace"></div>
+            <div class="bigSpace"></div>
 
             <!--Game Dev Skills -->
             <div class="container" id="gameDevSkills">
@@ -459,7 +464,7 @@
 
 
             {{#gameProjectsEnabled}}
-            <div class="BigSpace">
+            <div class="bigSpace">
             </div>
             {{/gameProjectsEnabled}}
 

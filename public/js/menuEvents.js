@@ -26,7 +26,8 @@ document.addEventListener("DOMContentLoaded", () => {
         ChangeElementDisplay("gameDevSkills", "none");
         ChangeElementDisplay("contactMe", "none");
         ChangeClassDisplay("wave", "none");
-        ChangeClassDisplay("BigSpace", "none");
+        ChangeClassDisplay("bigSpace", "none");
+        ChangeClassDisplay("smallSpace", "none");
 
         //Put up the first preview image
         document.getElementById(button.value + "_preview").click();
@@ -61,7 +62,8 @@ document.addEventListener("DOMContentLoaded", () => {
         ChangeElementDisplay("gameDevSkills", "block");
         ChangeElementDisplay("contactMe", "block");
         ChangeClassDisplay("wave", "block");
-        ChangeClassDisplay("BigSpace", "block");
+        ChangeClassDisplay("bigSpace", "block");
+        ChangeClassDisplay("smallSpace", "block");
 
         //Redirect to last menu
         window.location.href = lastMenu;

@@ -265,7 +265,7 @@ img {
 }
 
 //Alternative to spamming BR BR BR
-.BigSpace {
+.bigSpace {
   width: 200px;
   background: none;
   height: 200px;
@@ -273,7 +273,7 @@ img {
 }
 
 .smallSpace {
-  padding-bottom: 64px;
+  padding-bottom: 32px;
 }
 
 /* divider needed to position the button. Adjust the width as needed */
@@ -356,7 +356,7 @@ img {
 ::-webkit-scrollbar-thumb:hover {
   background: $titleColour;
 }
-/* Smaller screens ---------------------------------------------------------------------------------------------------------------------------------- */
+/* Smaller screens ----------------------------------------------------------------------------- */
 
 @media screen and (max-width: 480px) {
   #websites,
@@ -380,10 +380,6 @@ img {
 
   .col-sm-3 {
     max-width: 100%;
-  }
-
-  .bigBtn {
-    font-size: 2rem;
   }
 
   .divider .btn {
@@ -438,6 +434,19 @@ img {
   //Email
   #contactMe {
     font-size: 3rem;
+  }
+}
+@media (max-width: 959px) {
+  .bigImg {
+    width: 128px;
+    height: 128px;
+  }
+
+  .bigBtn {
+    font-size: 1rem;
+    width: 128px;
+    height: 128px;
+    left: 64px;
   }
 }
 
