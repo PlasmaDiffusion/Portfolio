@@ -358,7 +358,7 @@ img {
 }
 /* Smaller screens ---------------------------------------------------------------------------------------------------------------------------------- */
 
-@media screen and (max-width: 980px) {
+@media screen and (max-width: 480px) {
   #websites,
   #games,
   #Opening,
@@ -369,13 +369,13 @@ img {
   }
 
   h2 {
-    font-size: 3rem;
+    font-size: 2rem;
   }
 
   //Font size for main fonts
   .lead,
   .col-lg {
-    font-size: 2.5rem;
+    font-size: 1rem;
   }
 
   .col-sm-3 {
@@ -400,30 +400,26 @@ img {
 
   //Buttons for image previews
   .changePreview {
-    width: 64px;
+    width: 32px;
     height: 16px;
   }
 
   .changePreviewSelected,
   .changePreview:hover {
-    width: 64px;
-    height: 32px;
+    width: 32px;
+    height: 24px;
   }
 
   //Link buttons
   .siteLink,
   .repoLink {
     text-align: center;
+    font-size: 2rem;
   }
 
   //Size of a project window
   .row {
-    width: 180%;
-  }
-
-  .framework {
-    width: 256px;
-    height: 256px;
+    width: 200%;
   }
 
   .project {

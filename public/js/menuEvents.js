@@ -41,8 +41,8 @@ document.addEventListener("DOMContentLoaded", () => {
             "#" +
             button.parentNode.parentNode.parentNode.parentNode.parentNode.id;
 
-        //Move to top of screen to see the whole thing (No longer needed unless project descriptions are long)
-        //window.location.href = "#top";
+        //Move to top of screen to see the whole thing (Usually only needed for mobile)
+        window.location.href = "#top";
       };
 
       //Make the text smaller if the words are too big

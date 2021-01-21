@@ -97,40 +97,40 @@
                 </div>
                 <br>
 
-                <div class="row d-flex justify-content-center" style="width:
-                        100%">
-
-                           <div class="col-sm-1"> </div>
-
-
-
-                        {{#websiteData}}
-                        {{#isGame}}
-                        {{/isGame}}
-                        {{^isGame}}
-                        {{#big}}
-                        {{/big}}
-                        {{^big}}
-                                <div class="col-sm-2">
-                                    <div class="divider">
-                                                                    {{#thumbnail_string}}
-                                <img src={{thumbnail_string}}
-                                    style="display: block;">
-                                {{/thumbnail_string}}
-                                {{^thumbnail_string}}
-                                <img src={{image0_string}}
-                                    style="display: block;">
-                                {{/thumbnail_string}}
-                                
-                                    <button class="btn" value={{id}}>{{name}}</button>
+                    <div class="row d-flex justify-content-center" style="width:
+                            100%">
+    
+                               <div class="col-sm-1"> </div>
+    
+    
+    
+                            {{#websiteData}}
+                            {{#isGame}}
+                            {{/isGame}}
+                            {{^isGame}}
+                            {{#big}}
+                            {{/big}}
+                            {{^big}}
+                                    <div class="col-sm-2">
+                                        <div class="divider">
+                                                                        {{#thumbnail_string}}
+                                    <img src={{thumbnail_string}}
+                                        style="display: block;">
+                                    {{/thumbnail_string}}
+                                    {{^thumbnail_string}}
+                                    <img src={{image0_string}}
+                                        style="display: block;">
+                                    {{/thumbnail_string}}
+                                    
+                                        <button class="btn" value={{id}}>{{name}}</button>
+                                        </div>
                                     </div>
-                                </div>
-
-                        {{/big}}
-                        {{/isGame}}
-                        {{/websiteData}}
-
-                </div>
+    
+                            {{/big}}
+                            {{/isGame}}
+                            {{/websiteData}}
+    
+                    </div>
 
             </div>
             
