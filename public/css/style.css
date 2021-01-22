@@ -300,6 +300,9 @@ img {
   h2 {
     font-size: 2rem; }
 
+  .display-4 {
+    font-size: 2rem; }
+
   .lead,
   .col-lg {
     font-size: 1rem; }
@@ -314,7 +317,7 @@ img {
   a,
   h2 a,
   .close {
-    font-size: 3rem; }
+    font-size: 2rem; }
 
   .changePreview {
     width: 32px;
