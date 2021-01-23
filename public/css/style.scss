@@ -298,14 +298,20 @@ img {
   scroll-behavior: smooth; //Unused janky smooth scrollbar
 }*/
 
+//Grid for the projects
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  height: 300px;
+  width: 100%;
+  align-content: space-between;
+}
+
 /* Style the button and place it in the middle of the divider/image */
 .divider .btn,
 .bigBtn {
-  position: absolute;
-  top: 50%;
-  height: 98%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
+  position: relative;
   background-color: #555;
   color: white;
   font-size: 16px;
@@ -331,8 +337,9 @@ img {
 }
 
 .bigBtn {
-  width: 254px;
-  left: 128px;
+  bottom: 256px;
+  width: 256px;
+  height: 256px;
   font-size: 24pt;
 }
 
@@ -380,6 +387,10 @@ img {
   .lead,
   .col-lg {
     font-size: 1rem;
+  }
+
+  .flex-container {
+    height: 350px;
   }
 
   .col-sm-3 {
@@ -450,7 +461,11 @@ img {
     font-size: 1rem;
     width: 128px;
     height: 128px;
-    left: 64px;
+    bottom: 128px;
+  }
+
+  .bigSpace-MobileOnly {
+    height: 150px;
   }
 }
 

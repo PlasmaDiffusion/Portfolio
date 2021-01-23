@@ -68,16 +68,15 @@
                 {{/paragraphData}}
 
                 <!-- Big projects featured first -->
-                <div class="container">
-                    <div class="row d-flex justify-content-center" style="width:100%">
+                <div class="l">
+                    <div class="flex-container">
                         {{#websiteData}}
                         {{#isGame}}
                         {{/isGame}}
                         {{^isGame}}
                         {{#big}}
-                        <div class="col-sm-3">
 
-                            <div class="divider">
+                                <div class="projectBox">
                                 <!-- Show either thumbnail image or first regular image -->
                                 {{#thumbnail_string}}
                                 <img src={{thumbnail_string}} class="bigImg"
@@ -89,16 +88,16 @@
                                 {{/thumbnail_string}}
 
                                 <button class="bigBtn" value={{id}}>{{name}}</button>
-                            </div>
-                        </div>
+                                </div>
                         {{/big}}
                         {{/isGame}}
                         {{/websiteData}}
                     </div>
-                <br>
-                
 
-                    <div class="row d-flex justify-content-center" style="width:100%">
+                
+                    <div class="bigSpace-MobileOnly"></div>
+
+                    <div class="flex-container">
     
     
     
@@ -111,9 +110,7 @@
                             {{#big}}
                             {{/big}}
                             {{^big}}
-                        <div class="col-sm-3">
-
-                            <div class="divider">
+                            <div>
                                 <!-- Show either thumbnail image or first regular image -->
                                 {{#thumbnail_string}}
                                 <img src={{thumbnail_string}} class="bigImg"
@@ -126,7 +123,6 @@
 
                                 <button class="bigBtn" value={{id}}>{{name}}</button>
                             </div>
-                        </div>
     
                             {{/big}}
                             {{/isGame}}
