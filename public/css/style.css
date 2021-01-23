@@ -341,6 +341,9 @@ img {
     text-align: center;
     font-size: 2rem; }
 
+  #contactMe {
+    font-size: 3rem; }
+
   .row {
     width: 200%; }
 
@@ -351,11 +354,14 @@ img {
     max-width: none; }
 
   .smallSpace {
-    padding-bottom: 32px; }
+    padding-bottom: 32px; } }
+@media (max-width: 382px) {
+  .bigSpace-MobileOnly {
+    height: 150px; } }
+@media (max-width: 768px) {
+  .flex-container {
+    width: 100%; }
 
-  #contactMe {
-    font-size: 3rem; } }
-@media (max-width: 959px) {
   .bigImg {
     width: 128px;
     height: 128px; }
@@ -364,10 +370,7 @@ img {
     font-size: 1rem;
     width: 128px;
     height: 128px;
-    bottom: 128px; }
-
-  .bigSpace-MobileOnly {
-    height: 150px; } }
+    bottom: 128px; } }
 @keyframes fade {
   0% {
     opacity: 0; }

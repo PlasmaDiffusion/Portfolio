@@ -428,6 +428,11 @@ img {
     font-size: 2rem;
   }
 
+  //Email
+  #contactMe {
+    font-size: 3rem;
+  }
+
   //Size of a project window
   .row {
     width: 200%;
@@ -445,13 +450,20 @@ img {
   .smallSpace {
     padding-bottom: 32px;
   }
+}
 
-  //Email
-  #contactMe {
-    font-size: 3rem;
+@media (max-width: 382px) {
+  .bigSpace-MobileOnly {
+    height: 150px;
   }
 }
-@media (max-width: 959px) {
+
+//Tablets and mobile phones
+@media (max-width: 768px) {
+  .flex-container {
+    width: 100%;
+  }
+
   .bigImg {
     width: 128px;
     height: 128px;
@@ -462,10 +474,6 @@ img {
     width: 128px;
     height: 128px;
     bottom: 128px;
-  }
-
-  .bigSpace-MobileOnly {
-    height: 150px;
   }
 }
 
