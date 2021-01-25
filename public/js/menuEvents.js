@@ -39,8 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (button.className == "bigBtn")
           lastMenu =
-            "#" +
-            button.parentNode.parentNode.parentNode.parentNode.parentNode.id;
+            "#" + button.parentNode.parentNode.parentNode.parentNode.id;
 
         //Move to top of screen to see the whole thing (Usually only needed for mobile)
         window.location.href = "#top";

@@ -217,11 +217,16 @@ h2 {
   background-color: $outlineCol;
   color: white;
   margin: 10px;
+  border-radius: 4px;
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+  padding-bottom: 2px !important;
 }
 
 .close:hover,
 .close:active {
-  color: red;
+  color: white;
+  background-color: rgb(206, 133, 133);
   margin: 10px;
 }
 //----------------------------------------------

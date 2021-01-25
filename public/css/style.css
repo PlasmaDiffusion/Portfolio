@@ -174,11 +174,16 @@ h2 {
 .close:visited {
   background-color: #004b69;
   color: white;
-  margin: 10px; }
+  margin: 10px;
+  border-radius: 4px;
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+  padding-bottom: 2px !important; }
 
 .close:hover,
 .close:active {
-  color: red;
+  color: white;
+  background-color: #ce8585;
   margin: 10px; }
 
 img {
