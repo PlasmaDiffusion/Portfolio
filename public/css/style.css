@@ -206,9 +206,7 @@ img {
   height: 128px; }
 
 #contactMe {
-  text-align: center;
-  font-size: 2rem;
-  display: block; }
+  text-align: center; }
 
 .bigSpace {
   width: 200px;
@@ -219,7 +217,6 @@ img {
 .smallSpace {
   padding-bottom: 32px; }
 
-/* divider needed to position the button. Adjust the width as needed */
 .divider,
 .project {
   position: relative;
@@ -228,7 +225,6 @@ img {
 .project {
   margin-left: 25%; }
 
-/* Make the image responsive */
 .previewImage {
   width: 200%;
   height: auto; }
@@ -244,7 +240,6 @@ img {
   width: 100%;
   align-content: space-between; }
 
-/* Style the button and place it in the middle of the divider/image */
 .divider .btn,
 .bigBtn {
   position: relative;
@@ -275,6 +270,11 @@ img {
   height: 256px;
   font-size: 24pt; }
 
+#contactMe > a > svg {
+  width: 5rem;
+  height: 5rem;
+  fill: currentcolor; }
+
 /* Scrollbar ----------------------------------------------------------------------------------*/
 /* width */
 ::-webkit-scrollbar {
@@ -292,7 +292,7 @@ img {
 ::-webkit-scrollbar-thumb:hover {
   background: #526eb8; }
 
-/* Smaller screens ----------------------------------------------------------------------------- */
+/* Phone screens ----------------------------------------------------------------------------- */
 @media screen and (max-width: 480px) {
   #websites,
   #games,
@@ -314,6 +314,9 @@ img {
 
   .flex-container {
     height: 350px; }
+
+  .flex-container > div {
+    flex: 0 33%; }
 
   .col-sm-3 {
     max-width: 100%; }
@@ -341,8 +344,13 @@ img {
     text-align: center;
     font-size: 2rem; }
 
-  #contactMe {
-    font-size: 3rem; }
+  #contactMe > a {
+    font-size: 1rem; }
+
+  #contactMe > a > svg {
+    width: 3rem;
+    height: 3rem;
+    fill: currentcolor; }
 
   .row {
     width: 200%; }

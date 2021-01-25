@@ -260,8 +260,6 @@ img {
 //Link at bottom linking to email
 #contactMe {
   text-align: center;
-  font-size: 2rem;
-  display: block;
 }
 
 //Alternative to spamming BR BR BR
@@ -271,12 +269,11 @@ img {
   height: 200px;
   display: inline-block;
 }
-
 .smallSpace {
   padding-bottom: 32px;
 }
 
-/* divider needed to position the button. Adjust the width as needed */
+//Project "window"
 .divider,
 .project {
   position: relative;
@@ -288,7 +285,7 @@ img {
   //transition: opacity 0.5s;
 }
 
-/* Make the image responsive */
+//The images shown after you click on a project
 .previewImage {
   width: 200%;
   height: auto;
@@ -308,7 +305,7 @@ img {
   align-content: space-between;
 }
 
-/* Style the button and place it in the middle of the divider/image */
+//Buttons to be placed on top of project images
 .divider .btn,
 .bigBtn {
   position: relative;
@@ -343,6 +340,13 @@ img {
   font-size: 24pt;
 }
 
+//Contact me svg links
+#contactMe > a > svg {
+  width: 5rem;
+  height: 5rem;
+  fill: currentcolor;
+}
+
 /* Scrollbar ----------------------------------------------------------------------------------*/
 /* width */
 ::-webkit-scrollbar {
@@ -363,7 +367,7 @@ img {
 ::-webkit-scrollbar-thumb:hover {
   background: $titleColour;
 }
-/* Smaller screens ----------------------------------------------------------------------------- */
+/* Phone screens ----------------------------------------------------------------------------- */
 
 @media screen and (max-width: 480px) {
   #websites,
@@ -391,6 +395,10 @@ img {
 
   .flex-container {
     height: 350px;
+  }
+
+  .flex-container > div {
+    flex: 0 33%;
   }
 
   .col-sm-3 {
@@ -429,8 +437,13 @@ img {
   }
 
   //Email
-  #contactMe {
-    font-size: 3rem;
+  #contactMe > a {
+    font-size: 1rem;
+  }
+  #contactMe > a > svg {
+    width: 3rem;
+    height: 3rem;
+    fill: currentcolor;
   }
 
   //Size of a project window
