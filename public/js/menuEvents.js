@@ -32,14 +32,8 @@ document.addEventListener("DOMContentLoaded", () => {
         //Put up the first preview image
         document.getElementById(button.value + "_preview").click();
 
-        //Save what the last menu was
-        if (button.className == "btn")
-          lastMenu =
-            "#" + button.parentNode.parentNode.parentNode.parentNode.id;
-
-        if (button.className == "bigBtn")
-          lastMenu =
-            "#" + button.parentNode.parentNode.parentNode.parentNode.id;
+        //Save the last menu to redirect to it later
+        lastMenu = "#" + button.parentNode.parentNode.parentNode.id;
 
         //Move to top of screen to see the whole thing (Usually only needed for mobile)
         window.location.href = "#top";

@@ -15,7 +15,6 @@
     </head>
 
     <body>
-        <div class="container-fluid">
 
             <div id="Opening" class="jumbotron">
 
@@ -23,21 +22,33 @@
                     border-top-right-radius: 0; padding: 60px;" class="display-4">Scott Cooper
                     <br>
                     {{#paragraphData}}
+                    <!-- Both titles -->
+                    {{#bothProjectTypesEnabled}}
+                    <p class="subHeading">{{webDevTitle}} / {{gameDevTitle}}</p>
+                    {{/bothProjectTypesEnabled}}
+                    {{^bothProjectTypesEnabled}}
+                    
+
+
+
+                    <!-- Game dev title -->
+                    {{#gameProjectsEnabled}}
+                     <p class="subHeading">{{gameDevTitle}}</p>
+                    {{/gameProjectsEnabled}}
+
                     <!-- Web dev title -->
                     {{#websiteProjectsEnabled}}
-                    <a href="#">{{webDevTitle}}</a>
+                    <p class="subHeading">{{webDevTitle}}</p>
                     {{/websiteProjectsEnabled}}
-                    <!-- Slash if showing both -->
-                    {{#bothProjectTypesEnabled}}
-                    /
+
+
                     {{/bothProjectTypesEnabled}}
-                    <!-- Game dev title -->
-                    {{#gameProjectsEnabled}}<a
-                        href="#">{{gameDevTitle}}</a>
-                    {{/gameProjectsEnabled}}
 
 
                     {{/paragraphData}}
+
+                    
+
                 </h2>
                 {{#paragraphData}}
                 <p class="lead">{{introParagraph1}}</p>
@@ -45,7 +56,11 @@
 
                 <p class="lead">{{introParagraph2}}</p>
                 {{/paragraphData}}
+
+
             </div>
+
+
 
             {{#websiteProjectsEnabled}}
             <div id="websites_Scroll">
@@ -68,13 +83,11 @@
                 {{/paragraphData}}
 
                 <!-- Big projects featured first -->
-                <div class="l">
                     <div class="flex-container">
                         {{#websiteData}}
                         {{#isGame}}
                         {{/isGame}}
                         {{^isGame}}
-                        {{#big}}
 
                                 <div class="projectBox">
                                 <!-- Show either thumbnail image or first regular image -->
@@ -89,47 +102,10 @@
 
                                 <button class="bigBtn" value={{id}}>{{name}}</button>
                                 </div>
-                        {{/big}}
                         {{/isGame}}
                         {{/websiteData}}
                     </div>
 
-                
-                    <div class="bigSpace-MobileOnly"></div>
-
-                    <div class="flex-container">
-    
-    
-    
-    
-    
-                            {{#websiteData}}
-                            {{#isGame}}
-                            {{/isGame}}
-                            {{^isGame}}
-                            {{#big}}
-                            {{/big}}
-                            {{^big}}
-                            <div>
-                                <!-- Show either thumbnail image or first regular image -->
-                                {{#thumbnail_string}}
-                                <img src={{thumbnail_string}} class="bigImg"
-                                    style="display: block;">
-                                {{/thumbnail_string}}
-                                {{^thumbnail_string}}
-                                <img src={{image0_string}} class="bigImg"
-                                    style="display: block;">
-                                {{/thumbnail_string}}
-
-                                <button class="bigBtn" value={{id}}>{{name}}</button>
-                            </div>
-    
-                            {{/big}}
-                            {{/isGame}}
-                            {{/websiteData}}
-    
-                    </div>
-                </div>
             <div class="smallSpace"></div>
 
 
@@ -141,7 +117,7 @@
 
             <!-- Website Skills -->
             <div class="container" id="webDevSkills">
-                <div class ="row" style="width: 100%; background: none;">
+                <div class ="row" style="width: 100%; margin-left:0; margin-right:0; background: none;">
                         <div class ="col-sm">
                             
                             <h2 class="display-4">Web Developer Skills </h2>
@@ -198,7 +174,6 @@
                     <div class="flex-container">
                             {{#websiteData}}
                             {{#isGame}}
-                            {{#big}}
 
                                 <div class="projectBox">
                                         {{#thumbnail_string}}
@@ -211,7 +186,6 @@
                                         {{/thumbnail_string}}
                                     <button class="bigBtn" value={{id}}>{{name}}</button>
                                 </div>
-                            {{/big}}
                             {{/isGame}}
                             {{^isGame}}
 
@@ -219,31 +193,7 @@
                             {{/websiteData}}
                         
                     </div>
-                    <br>
 
-
-                        <div class="flex-container">
-
-                            {{#websiteData}}
-                            {{#isGame}}
-                            {{#big}}
-                            {{/big}}
-                            {{^big}}
-                                <div class="projectBox">
-                                        {{#thumbnail_string}}
-                                        <img src={{thumbnail_string}} class="bigImg"
-                                            style="display: block;">
-                                        {{/thumbnail_string}}
-                                        {{^thumbnail_string}}
-                                        <img src={{image0_string}} class="bigImg"
-                                            style="display: block;">
-                                        {{/thumbnail_string}}
-                                    <button class="btn" value={{id}}>{{name}}</button>
-                                </div>
-                            {{/big}}
-                            {{/isGame}}
-                            {{/websiteData}}
-                        </div>
 
                 </div>
 
@@ -252,7 +202,7 @@
 
             <!--Game Dev Skills -->
             <div class="container" id="gameDevSkills">
-                <div class ="row" style="width: 100%; background: none;">
+                <div class ="row" style="width: 100%; margin-left:0; margin-right:0; background: none;">
                         <div class ="col-sm">
                             
                             <h2 class="display-4">Game Programmer Skills </h2>
@@ -489,7 +439,7 @@
              <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></svg> 
             </a>
 
-                        <div style="padding-bottom: 128px;"></div>
+            <div style="padding-bottom: 128px;"></div>
 
             
             </div>
