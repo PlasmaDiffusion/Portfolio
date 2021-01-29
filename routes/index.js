@@ -131,15 +131,25 @@ function orderProjectData(results, data) {
 
 //Make two arrays of skills to display from a split string
 function splitSkillString(data) {
-  //Make a WebDev skill string
-  var splitArray = data.paragraphData[0].webDevSkills.split("|");
+  //Make a FrontEnd skill string
+  var splitArray = data.paragraphData[0].frontEndSkills.split("|");
   var skillArray = [];
   splitArray.forEach((element) => {
     //This is needed so it can be used like a map with hogan
     skillArray.push({ name: element });
     console.log(element);
   });
-  data.paragraphData[0].webDevSkills = skillArray;
+  data.paragraphData[0].frontEndSkills = skillArray;
+
+  //Make a BackEnd skill string
+  var splitArray = data.paragraphData[0].backEndSkills.split("|");
+  var skillArray = [];
+  splitArray.forEach((element) => {
+    //This is needed so it can be used like a map with hogan
+    skillArray.push({ name: element });
+    console.log(element);
+  });
+  data.paragraphData[0].backEndSkills = skillArray;
 
   console.log(skillArray);
 

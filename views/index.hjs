@@ -116,23 +116,49 @@
             </div>
 
             <!-- Website Skills -->
-            <div class="container" id="webDevSkills">
+            <div class="container" id="webDevSkills_frontEnd">
                 <div class ="row" style="width: 100%; margin-left:0; margin-right:0; background: none;">
                         <div class ="col-sm">
                             
-                            <h2 class="display-4">Web Developer Skills </h2>
+                            <h2 class="display-4">Front End Skills </h2>
                         </div>
                         <div class ="col-lg">
                                 {{#paragraphData}}
                                 <ul class="list-group">
-                                    {{#webDevSkills}}
+                                    {{#frontEndSkills}}
                                     
                                         <li class="list-group-item
                                             list-group-item-dark
                                             colour">{{{name}}}</li>
 
 
-                                    {{/webDevSkills}}
+                                    {{/frontEndSkills}}
+                                </ul>
+                                {{/paragraphData}}
+
+                        </div>
+                        
+                    </div>
+                </div>
+                <div style="padding:10rem"></div>
+
+                <div class="container" id="webDevSkills_backtEnd">
+                <div class ="row" style="width: 100%; margin-left:0; margin-right:0; background: none;">
+                        <div class ="col-sm">
+                            
+                            <h2 class="display-4">Back End Skills </h2>
+                        </div>
+                        <div class ="col-lg">
+                                {{#paragraphData}}
+                                <ul class="list-group">
+                                    {{#backEndSkills}}
+                                    
+                                        <li class="list-group-item
+                                            list-group-item-dark
+                                            colour">{{{name}}}</li>
+
+
+                                    {{/backEndSkills}}
                                 </ul>
                                 {{/paragraphData}}
 
