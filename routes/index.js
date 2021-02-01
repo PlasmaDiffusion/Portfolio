@@ -4,6 +4,9 @@ const router = express.Router();
 //Extra packages
 const chai = require("chai");
 const mysql = require("mysql");
+var nodemailer = require("nodemailer");
+
+// Routes ---------------------------------------------------------------------------------------------------------------------
 
 //Default page here (Shows all projects)
 router.get("/", (req, res, next) => {
@@ -16,10 +19,26 @@ router.get("/:projectType", (req, res, next) => {
   readFromDatabase(res, req.params.projectType);
 });
 
+//Post the email form
+router.post("/", (req, res, next) => {
+  sendEmail(req, res);
+});
+router.post("/:projectType", (req, res, next) => {
+  sendEmail(req, res);
+});
+
 module.exports = router;
 
-function readFromDatabase(res, projectType = "websites") {
+// Global functions ---------------------------------------------------------------------------------------------------------
+
+function readFromDatabase(res, projectType = "websites", messageSent = 0) {
   var data = {};
+
+  //Resonse to a message being sent. This only occurs from post methods.
+  if (messageSent == 1)
+    data.messageSent = "Your message was sent. I'll get back to you shortly.";
+  else if (messageSent == 2)
+    data.messageSent = "Error. The message wasn't sent.";
 
   //Set data flags for showing each project type
   if (projectType == "all" || projectType == "games")
@@ -42,7 +61,7 @@ function readFromDatabase(res, projectType = "websites") {
 
   //Read in website/game data
   connection.query("SELECT * FROM projects", function (error, results, fields) {
-    console.log("Checked if exists: ");
+    console.log("Project data length: ");
     console.log(results.length);
 
     if (results.length > 0) {
@@ -64,9 +83,6 @@ function readFromDatabase(res, projectType = "websites") {
   connection.query(
     "SELECT * FROM paragraphs",
     function (error, results, fields) {
-      console.log("Checked if exists: ");
-      console.log(results.length);
-
       if (results.length > 0) {
         data.paragraphData = results;
 
@@ -137,18 +153,14 @@ function splitSkillString(data) {
   splitArray.forEach((element) => {
     //This is needed so it can be used like a map with hogan
     skillArray.push({ name: element });
-    console.log(element);
   });
   data.paragraphData[0].webDevSkills = skillArray;
-
-  console.log(skillArray);
 
   //Make a GameDev skill string
   splitArray = data.paragraphData[0].gameDevSkills.split("|");
   skillArray = [];
   splitArray.forEach((element) => {
     skillArray.push({ name: element });
-    console.log(element);
   });
   data.paragraphData[0].gameDevSkills = skillArray;
 
@@ -161,8 +173,8 @@ function splitSkillString(data) {
   );
 }
 
+//Overwrite paragraph 1 depending on if we're showing a specific type of project
 function modifyParagraphData(data) {
-  //Overwrite paragraph 1 depending on if we're showing a specific type of project
   if (data.bothProjectTypesEnabled) return;
   if (data.gameProjectsEnabled)
     data.paragraphData[0].introParagraph1 =
@@ -170,4 +182,41 @@ function modifyParagraphData(data) {
   else if (data.websiteProjectsEnabled)
     data.paragraphData[0].introParagraph1 =
       data.paragraphData[0].introParagraph1_websitesOnly;
+}
+
+//Post routes call this after you've sent the form
+function sendEmail(req, res) {
+  //Format the message so line breaks exist.
+  var msg = req.body.body.split("\n");
+  var formattedMessage = msg.join("<br>");
+
+  //Login to gmail
+  var transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: process.env.GMAIL_USER,
+      pass: process.env.GMAIL_PASS,
+    },
+  });
+
+  //Prepare the name, email and message
+  var mailOptions = {
+    from: "youremail@gmail.com",
+    to: process.env.GMAIL_USER,
+    subject: "Message From Portfolio",
+    html: `<h1> ${req.body.name} (${req.body.email}) </h1> <br><br> <p> ${formattedMessage} </p>`,
+  };
+
+  //Send it to my email
+  transporter.sendMail(mailOptions, function (error, info) {
+    if (error) {
+      console.log(error);
+      //Render site normally
+      readFromDatabase(res, req.params.projectType, true);
+    } else {
+      console.log("Email sent: " + info.response);
+      //Render site normally
+      readFromDatabase(res, req.params.projectType, true);
+    }
+  });
 }

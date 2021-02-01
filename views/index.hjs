@@ -15,7 +15,14 @@
     </head>
 
     <body>
+            <!-- Email form response -->
+            {{#messageSent}}
+                <div class="bigSpace"></div>
+                <p class="lead">{{messageSent}}</p>
+                <div class="bigSpace"></div>
+            {{/messageSent}}
 
+            <!-- The site titles and opening paragraphs -->
             <div id="Opening" class="jumbotron">
 
                 <h2 style="border-top-left-radius: 0;
@@ -58,6 +65,29 @@
                 {{/paragraphData}}
 
 
+                <!-- Web framework icons -->
+                {{#websiteProjectsEnabled}}
+
+                <div class="flex-container">
+                        <div><img src="images/HTML5Logo.png" class="framework grow"></div>
+                        <div><img src="images/CSS3Logo.png" class="framework grow"></div>
+                        <div><img src="images/ReactLogo.png" class="framework grow"></div>
+                        <div><img src="images/djangoLogo.png" class="framework grow"></div>
+                        <div><img src="images/NodeJSLogo.png" class="framework grow"></div>
+                </div>
+                
+                {{/websiteProjectsEnabled}}
+
+                <!-- Game engine icons -->
+                {{#gameProjectsEnabled}}
+
+                <div class="flex-container">
+                        <div><img src="images/unityLogo.png" class="framework"></div>
+                        <div><img src="images/unrealLogo.png" class="framework"></div>
+                </div>
+                
+                {{/gameProjectsEnabled}}
+
             </div>
 
 
@@ -65,9 +95,8 @@
             {{#websiteProjectsEnabled}}
             <div id="websites_Scroll">
             </div>
-            <div class="bigSpace"></div>
             </div>
-            <div class="smallSpace"></div>
+            <div class="bigSpace"></div>
 
             <div class="wave" style="height: 75px; overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,49.99 C150.00,150.00 349.20,-49.99 500.00,49.99 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #002736;"></path></svg></div>
 
@@ -420,7 +449,7 @@
 
             <!-- Email -->
             <a
-                href="https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1&source=mailto&su=&to=ScottCooperDeveloper@gmail.com"
+                href="mailto:ScottCooperDeveloper@gmail.com"
                 >  
                 <svg  viewBox="0 0 16 16" class="bi
                     bi-envelope-fill" fill="currentColor"
@@ -438,6 +467,21 @@
             <a href="https://www.linkedin.com/in/scott-cooper-6a719a109/"> 
              <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></svg> 
             </a>
+
+            <div style="padding-bottom: 128px;"></div>
+            <!-- Contact form -->
+            <form id="emailForm" action="#top" method="POST">
+                <label for="name" class="lead">Name:</label><br>
+                <input type="text" class="smallInput" name="name" placeholder="Full Name">
+                <br>
+                <label for="email" class="lead">Email:<i>*</i></label><br>
+                <input type="text" class="smallInput" type="email" placeholder="example@gmail.com" name="email" required>
+                <br>
+                <label for="email" class="lead">Message:<i>*</i></label><br>
+                <textarea type="text" id="emailMsg" rows="12" cols="64" class="largeInput" placeholder="Reason for contacting me..." name="body" required></textarea>
+                <br> <br>
+                <input type="submit" class="lead" value="Send"> <br><br>
+            </form>
 
             <div style="padding-bottom: 128px;"></div>
 
